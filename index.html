@@ -60,6 +60,8 @@ nav {
   border-bottom: 1px solid var(--line);
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 7%; height: 60px;
+  transition: height 0.3s cubic-bezier(0.16,1,0.3,1),
+              box-shadow 0.3s ease;
 }
 .logo {
   font-family: 'DM Serif Display', serif;
@@ -126,8 +128,23 @@ nav {
   line-height: 1.85; max-width: 600px;
 }
 .divider { border: none; border-top: 1px solid var(--line); }
-.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
 .reveal.on { opacity: 1; transform: none; }
+
+/* Staggered children inside reveal */
+.reveal > *:nth-child(1) { transition-delay: 0.04s; }
+.reveal > *:nth-child(2) { transition-delay: 0.09s; }
+.reveal > *:nth-child(3) { transition-delay: 0.14s; }
+.reveal > *:nth-child(4) { transition-delay: 0.19s; }
+.reveal > *:nth-child(5) { transition-delay: 0.24s; }
+.reveal > *:nth-child(6) { transition-delay: 0.29s; }
+.reveal > *:nth-child(7) { transition-delay: 0.34s; }
+.reveal > *:nth-child(8) { transition-delay: 0.38s; }
 
 /* ─ HERO ─ */
 #hero {
@@ -168,16 +185,23 @@ nav {
   background: var(--ink); color: #fff;
   padding: 0.75rem 1.75rem; border-radius: var(--r);
   font-size: 0.85rem; font-weight: 500; text-decoration: none;
-  transition: background 0.2s;
+  transition: background 0.25s cubic-bezier(0.16,1,0.3,1),
+              transform 0.25s cubic-bezier(0.16,1,0.3,1),
+              box-shadow 0.25s;
+  display: inline-block;
 }
-.btn-dark:hover { background: var(--gold); }
+.btn-dark:hover {
+  background: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(180,83,9,0.18);
+}
 .btn-line {
   color: var(--ink); font-size: 0.85rem; font-weight: 500;
   text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem;
   border-bottom: 1px solid var(--line); padding-bottom: 2px;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, color 0.2s, gap 0.2s;
 }
-.btn-line:hover { border-color: var(--ink); }
+.btn-line:hover { border-color: var(--gold); color: var(--gold); gap: 0.7rem; }
 
 /* Hero bottom bar — 4 KPIs */
 .hero-kpis {
@@ -196,31 +220,59 @@ nav {
 /* ─ ABOUT ─ */
 #about { background: var(--bg); }
 .about-cols {
-  display: grid; grid-template-columns: 1fr 1.6fr;
-  gap: 6rem; margin-top: 3.5rem; align-items: start;
+  display: grid; grid-template-columns: 260px 1fr;
+  gap: 5rem; margin-top: 3.5rem; align-items: start;
 }
-.about-meta { display: flex; flex-direction: column; }
+.about-meta {
+  display: flex; flex-direction: column;
+  border-top: 2px solid var(--gold);
+  padding-top: 0.1rem;
+}
+
 .meta-row {
-  padding: 0.85rem 0;
+  display: flex; flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.9rem 0;
   border-bottom: 1px solid var(--line);
-  display: flex; flex-direction: column; gap: 0.2rem;
+  transition: padding-left 0.2s ease, background 0.2s ease;
+  cursor: default;
 }
-.meta-row:first-child { border-top: 1px solid var(--line); }
-.meta-k { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--faint); }
-.meta-v { font-size: 0.9rem; color: var(--ink); font-weight: 400; }
-.meta-v a { color: var(--gold); text-decoration: none; }
-.meta-v a:hover { text-decoration: underline; }
+.meta-row:hover {
+  padding-left: 0.5rem;
+  background: linear-gradient(to right, #FFFBF5, transparent);
+}
+
+.meta-k {
+  font-size: 0.59rem;
+  text-transform: uppercase;
+  letter-spacing: 0.17em;
+  color: var(--faint);
+  font-weight: 600;
+}
+.meta-v {
+  font-size: 0.88rem;
+  color: var(--ink);
+  font-weight: 400;
+  line-height: 1.55;
+}
+.meta-v a {
+  color: var(--gold); text-decoration: none;
+  transition: opacity 0.15s;
+}
+.meta-v a:hover { opacity: 0.7; }
 .about-text p { font-size: 0.97rem; color: var(--soft); line-height: 1.9; margin-bottom: 1.1rem; }
 .about-text strong { color: var(--ink); font-weight: 500; }
 .blockquote {
   margin-top: 2rem;
-  padding-left: 1.5rem;
-  border-left: 2px solid var(--gold);
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid var(--gold);
+  background: #FFFBF5;
+  border-radius: 0 6px 6px 0;
 }
 .blockquote p {
   font-family: 'DM Serif Display', serif;
-  font-size: 1.1rem; font-style: italic;
-  color: var(--ink); line-height: 1.65; margin: 0 !important;
+  font-size: 1.08rem; font-style: italic;
+  color: var(--ink); line-height: 1.7; margin: 0 !important;
 }
 
 /* ─ SKILLS ─ */
@@ -228,20 +280,24 @@ nav {
 .skills-table { margin-top: 3.5rem; }
 .skill-row {
   display: grid; grid-template-columns: 200px 1fr;
-  gap: 2rem; padding: 1.5rem 0;
+  gap: 2rem; padding: 1.5rem 0.85rem;
   border-bottom: 1px solid var(--line);
+  border-left: 2px solid transparent;
   align-items: start;
+  transition: border-left-color 0.22s ease, background 0.22s ease;
 }
 .skill-row:first-child { border-top: 1px solid var(--line); }
+.skill-row:hover { border-left-color: var(--gold); background: #FFFBF5; }
 .sk-cat { font-size: 0.78rem; font-weight: 500; color: var(--ink); letter-spacing: 0.02em; padding-top: 0.1rem; }
 .sk-items { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .tag {
   font-size: 0.76rem; color: var(--soft);
   background: var(--bg); border: 1px solid var(--line);
   padding: 0.28rem 0.8rem; border-radius: 100px;
-  transition: all 0.15s;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
 }
-.tag:hover { border-color: var(--gold); color: var(--gold); }
+.tag:hover { border-color: var(--gold); color: var(--gold); background: #FFFBF5; transform: translateY(-1px); }
 .tag.hi { background: #FEF3C7; border-color: #FDE68A; color: var(--gold); }
 
 /* ─ EXPERIENCE ─ */
@@ -249,11 +305,14 @@ nav {
 .exp-list { margin-top: 3.5rem; }
 .exp-row {
   display: grid; grid-template-columns: 200px 1fr;
-  gap: 2rem; padding: 2.5rem 0;
+  gap: 2rem; padding: 2.5rem 0.85rem;
   border-bottom: 1px solid var(--line);
+  border-left: 2px solid transparent;
+  transition: border-left-color 0.22s ease, background 0.22s ease;
 }
 .exp-row:first-child { border-top: 1px solid var(--line); }
 .exp-row:last-child { border-bottom: none; }
+.exp-row:hover { border-left-color: var(--gold); background: #FFFBF5; }
 .exp-aside {}
 .exp-period { font-size: 0.72rem; color: var(--gold); font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.3rem; }
 .exp-co { font-size: 0.85rem; color: var(--soft); margin-bottom: 0.15rem; }
@@ -275,16 +334,16 @@ nav {
 #services { background: var(--cream); }
 .svc-list { margin-top: 3.5rem; }
 .svc-row {
-  display: grid; grid-template-columns: 60px 200px 1fr;
-  gap: 2rem; padding: 1.5rem 0;
+  display: grid; grid-template-columns: 200px 1fr;
+  gap: 2rem; padding: 1.5rem 0.85rem;
   border-bottom: 1px solid var(--line);
+  border-left: 2px solid transparent;
   align-items: start;
+  transition: border-left-color 0.22s ease, background 0.22s ease;
 }
 .svc-row:first-child { border-top: 1px solid var(--line); }
-.svc-num {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1rem; color: var(--faint); font-style: italic;
-}
+.svc-row:hover { border-left-color: var(--gold); background: #FFFBF5; }
+.svc-num { display: none; }
 .svc-name { font-size: 0.9rem; font-weight: 500; color: var(--ink); padding-top: 0.1rem; }
 .svc-desc { font-size: 0.86rem; color: var(--soft); line-height: 1.75; }
 
@@ -301,9 +360,10 @@ nav {
 .dgrid .wide { grid-column: span 2; }
 .dcard {
   background: var(--bg); text-decoration: none; display: block;
-  overflow: hidden; transition: opacity 0.2s;
+  overflow: hidden;
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16,1,0.3,1);
 }
-.dcard:hover { opacity: 0.82; }
+.dcard:hover { opacity: 0.85; transform: translateY(-3px); }
 .dthumb { width: 100%; overflow: hidden; background: #F3F4F6; }
 .wide .dthumb { aspect-ratio: 16/7; }
 .dcard:not(.wide) .dthumb { aspect-ratio: 4/3; }
@@ -381,26 +441,172 @@ footer {
 .fl a { font-size: 0.75rem; color: var(--faint); text-decoration: none; transition: color 0.2s; }
 .fl a:hover { color: var(--gold); }
 
+/* ─ NEW CONTACT-FOOTER BLOCK ─ */
+.ctf-block {
+  background: #0D1B2A;
+  padding: 5rem 7% 0;
+}
+.ctf-inner { max-width: 960px; margin: 0 auto; }
+.ctf-heading {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 400; color: #fff;
+  text-align: center; margin-bottom: 0.75rem;
+}
+.ctf-rule {
+  width: 40px; height: 2px;
+  background: var(--gold); margin: 0 auto 2rem;
+  border: none;
+}
+.ctf-sub {
+  font-size: 0.97rem; color: rgba(255,255,255,0.5);
+  text-align: center; line-height: 1.8;
+  max-width: 560px; margin: 0 auto 3.5rem;
+}
+
+/* Icon cards grid */
+.ctf-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+.ctf-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(184,150,90,0.18);
+  border-radius: 8px; padding: 2rem 1rem;
+  text-decoration: none; text-align: center;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 0.85rem;
+}
+.ctf-card:hover {
+  background: rgba(184,150,90,0.08);
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+.ctf-card-icon {
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+}
+.ctf-card-icon svg { width: 28px; height: 28px; fill: var(--gold); }
+.ctf-card-label {
+  font-size: 0.82rem; font-weight: 500;
+  color: rgba(255,255,255,0.8); line-height: 1.3;
+}
+
+/* Behance row */
+.ctf-behance-row {
+  text-align: center;
+  padding: 2.5rem 0;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  margin-bottom: 0;
+}
+.ctf-behance-label {
+  font-size: 0.68rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: rgba(255,255,255,0.3);
+  margin-bottom: 1rem;
+}
+.ctf-behance-btn {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  border: 1px solid rgba(184,150,90,0.35);
+  color: rgba(255,255,255,0.75); padding: 0.7rem 1.6rem;
+  border-radius: 4px; text-decoration: none;
+  font-size: 0.85rem; font-weight: 500;
+  transition: all 0.2s;
+}
+.ctf-behance-btn:hover {
+  background: rgba(184,150,90,0.1);
+  border-color: var(--gold); color: var(--gold-lt);
+}
+.ctf-behance-btn svg { width: 18px; height: 18px; fill: currentColor; }
+
+/* Footer bar inside the dark block */
+.ctf-footer-bar {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding: 1.75rem 0;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem;
+}
+.ctf-footer-brand {
+  display: flex; flex-direction: column; gap: 0.2rem;
+}
+.ctf-footer-mi {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.4rem; font-weight: 400; color: #fff;
+  letter-spacing: 0.02em;
+}
+.ctf-footer-mi span { color: var(--gold); }
+.ctf-footer-tagline {
+  font-size: 0.72rem; color: rgba(255,255,255,0.25);
+}
+.ctf-footer-copy {
+  font-size: 0.72rem; color: rgba(255,255,255,0.2);
+  text-align: right;
+}
+
+/* Responsive */
+@media(max-width:700px){
+  .ctf-cards { grid-template-columns: repeat(2,1fr); }
+}
+@media(max-width:400px){
+  .ctf-cards { grid-template-columns: repeat(2,1fr); gap: 0.85rem; }
+  .ctf-card { padding: 1.5rem 0.75rem; }
+  .ctf-footer-bar { flex-direction: column; align-items: flex-start; }
+  .ctf-footer-copy { text-align: left; }
+}
+
 /* ─ RESPONSIVE ─ */
 @media(max-width:900px){
-  .about-cols { grid-template-columns: 1fr; gap: 3rem; }
-  .skill-row { grid-template-columns: 1fr; gap: 0.5rem; }
-  .exp-row { grid-template-columns: 1fr; gap: 0.6rem; }
-  .svc-row { grid-template-columns: auto 1fr; gap: 1.25rem; }
-  .svc-row .svc-num { display: none; }
+  .about-cols { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-meta { position: static; }
+  .meta-row { border-left: none; }
+  .skill-row { grid-template-columns: 1fr; gap: 0.5rem; border-left: none; }
+  .exp-row { grid-template-columns: 1fr; gap: 0.6rem; border-left: none; }
+  .svc-row { grid-template-columns: 1fr; gap: 0.35rem; border-left: none; }
+  .meta-row { border-left: none; }
   .contact-cols { grid-template-columns: 1fr; gap: 3rem; }
   .cert-cols { grid-template-columns: 1fr; gap: 2.5rem; }
   .hero-kpis { grid-template-columns: repeat(2,1fr); }
   .nav-r a:not(.nav-cta) { display: none; }
   .hbg { display: flex; }
+  .design-intro { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .ctf-cards { grid-template-columns: repeat(2,1fr); }
 }
+
 @media(max-width:560px){
-  .section { padding: 5rem 5%; }
+  .section { padding: 4rem 5%; }
   nav { padding: 0 5%; }
-  footer { padding: 1.5rem 5%; }
   #hero { padding-left: 5%; padding-right: 5%; }
-  .form-row { grid-template-columns: 1fr; }
+  .ctf-block { padding: 4rem 5% 0; }
   .hero-kpis { grid-template-columns: repeat(2,1fr); gap: 1.25rem; }
+  .kpi-n { font-size: 1.8rem; }
+  .kpi-l { font-size: 0.72rem; }
+  .hero-name { letter-spacing: -0.01em; }
+  .skill-row { padding: 1.25rem 0; }
+  .svc-row { padding: 1.25rem 0; }
+  .svc-name { font-size: 0.92rem; font-weight: 600; margin-bottom: 0.2rem; }
+  .svc-desc { font-size: 0.84rem; line-height: 1.65; }
+  .sk-items { gap: 0.35rem; }
+  .tag { font-size: 0.73rem; padding: 0.26rem 0.7rem; }
+  .exp-title { font-size: 1.15rem; }
+  .exp-row { padding: 2rem 0; }
+  .bullet p { font-size: 0.85rem; }
+  .meta-row { padding: 0.85rem 0; }
+  .meta-v { font-size: 0.85rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .fg input, .fg textarea { font-size: 0.9rem; padding: 0.6rem 0; }
+  .ci-name { font-size: 0.83rem; }
+  .cbadge { display: none; }
+  .dgrid { grid-template-columns: 1fr; }
+  .dgrid .wide { grid-column: span 1; }
+  .wide .dthumb { aspect-ratio: 4/3; }
+  .ctf-cards { grid-template-columns: repeat(2,1fr); gap: 0.85rem; }
+  .ctf-card { padding: 1.5rem 0.75rem; }
+  .ctf-heading { font-size: 1.75rem; }
+  .ctf-footer-bar { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .ctf-footer-copy { text-align: left; }
+  footer { flex-direction: column; align-items: flex-start; gap: 0.75rem; padding: 1.5rem 5%; }
 }
 </style>
 </head>
@@ -484,8 +690,8 @@ footer {
         <div class="meta-row"><div class="meta-k">Languages</div><div class="meta-v">Arabic · English · Hindi · Bengali</div></div>
         <div class="meta-row"><div class="meta-k">Driving License</div><div class="meta-v">🚗 Valid in KSA & Bangladesh</div></div>
         <div class="meta-row"><div class="meta-k">Open to Work</div><div class="meta-v">KSA · Bangladesh · UAE · Qatar · Kuwait · Bahrain · Oman</div></div>
-        <div class="meta-row"><div class="meta-k">KSA</div><div class="meta-v"><a href="https://wa.me/966573255396" target="_blank">+966 573 255 396 (WhatsApp ↗)</a></div></div>
-        <div class="meta-row"><div class="meta-k">Bangladesh</div><div class="meta-v"><a href="https://wa.me/8801832984186" target="_blank">+880 183 298 4186 (WhatsApp ↗)</a></div></div>
+        <div class="meta-row"><div class="meta-k">KSA</div><div class="meta-v"><a href="https://wa.me/966573255396" target="_blank">+966 573 255 396 ↗</a></div></div>
+        <div class="meta-row"><div class="meta-k">Bangladesh</div><div class="meta-v"><a href="https://wa.me/8801832984186" target="_blank">+880 183 298 4186 ↗</a></div></div>
         <div class="meta-row"><div class="meta-k">Email</div><div class="meta-v"><a href="mailto:immorshed068@gmail.com">immorshed068@gmail.com</a></div></div>
         <div class="meta-row"><div class="meta-k">LinkedIn</div><div class="meta-v"><a href="https://linkedin.com/in/immorshed12" target="_blank">linkedin.com/in/immorshed12</a></div></div>
       </div>
@@ -742,6 +948,9 @@ footer {
       <div>
         <div class="cert-group-title">Earned & Active</div>
         <div class="cert-item"><div class="cdot e"></div><div class="ci-body"><div class="ci-name">BSS in Economics</div><div class="ci-sub">Govt. Chittagong College · National University, 2022</div></div><span class="cbadge e">Earned</span></div>
+        <div class="cert-item"><div class="cdot e"></div><div class="ci-body"><div class="ci-name">National Skill Standard — Computer Office Application</div><div class="ci-sub">Grade A+ · Government Certified Course</div></div><span class="cbadge e">Certified</span></div>
+        <div class="cert-item"><div class="cdot e"></div><div class="ci-body"><div class="ci-name">Graphic Design Certification</div><div class="ci-sub">Logo design, brand identity, image & video editing</div></div><span class="cbadge e">Certified</span></div>
+        <div class="cert-item"><div class="cdot e"></div><div class="ci-body"><div class="ci-name">Dutch Bangla Bank Scholarship</div><div class="ci-sub">Awarded for A+ in SSC — Academic excellence recognition</div></div><span class="cbadge e">Awarded</span></div>
         <div class="cert-item"><div class="cdot e"></div><div class="ci-body"><div class="ci-name">4+ Years GCC Accounting Experience</div><div class="ci-sub">Manufacturing & Trading · Saudi Arabia, 2021–Present</div></div><span class="cbadge e">Active</span></div>
         <div class="cert-item"><div class="cdot e"></div><div class="ci-body"><div class="ci-name">ZATCA VAT Practical Experience</div><div class="ci-sub">VAT filings, e-invoicing & audit support — 2 companies</div></div><span class="cbadge e">Active</span></div>
         <div class="cert-item"><div class="cdot e"></div><div class="ci-body"><div class="ci-name">Dual Driving License</div><div class="ci-sub">Valid in Saudi Arabia & Bangladesh</div></div><span class="cbadge e">Active</span></div>
@@ -763,19 +972,10 @@ footer {
   <div class="wrap">
     <span class="label">Contact</span>
     <h2 class="h2">Let's work together.</h2>
-    <p class="body-text">Whether you're hiring, exploring freelance accounting, or discussing a collaboration — reach out directly. Both numbers connect to WhatsApp.</p>
+    <p class="body-text">Send a message directly — or scroll down to reach me via WhatsApp, Email, or LinkedIn.</p>
     <hr class="divider" style="margin:2rem 0">
-    <div class="contact-cols reveal">
-      <div class="contact-links">
-        <a href="mailto:immorshed068@gmail.com" class="clink"><span class="cl-k">Email</span><span class="cl-v">immorshed068@gmail.com</span></a>
-        <a href="https://wa.me/966573255396" target="_blank" class="clink"><span class="cl-k">KSA</span><span class="cl-v">+966 573 255 396</span></a>
-        <a href="https://wa.me/8801832984186" target="_blank" class="clink"><span class="cl-k">Bangladesh</span><span class="cl-v">+880 183 298 4186</span></a>
-        <a href="https://linkedin.com/in/immorshed12" target="_blank" class="clink"><span class="cl-k">LinkedIn</span><span class="cl-v">linkedin.com/in/immorshed12</span></a>
-        <a href="https://www.behance.net/immorshed12" target="_blank" class="clink"><span class="cl-k">Behance</span><span class="cl-v">behance.net/immorshed12</span></a>
-        <a href="#" class="clink"><span class="cl-k">Resume</span><span class="cl-v">Download CV →</span></a>
-      </div>
+    <div style="max-width:560px;" class="reveal">
       <div class="cform">
-        <!-- Success / Error messages -->
         <div data-fs-success style="display:none; padding:1rem; background:#F0FDF4;
              border:1px solid #BBF7D0; border-radius:4px; font-size:0.85rem;
              color:#166534; margin-bottom:0.5rem;">
@@ -784,59 +984,37 @@ footer {
         <div data-fs-error style="display:none; padding:1rem; background:#FEF2F2;
              border:1px solid #FECACA; border-radius:4px; font-size:0.85rem;
              color:#991B1B; margin-bottom:0.5rem;">
-          ✗ Something went wrong. Please email me directly at
-          <a href="mailto:immorshed068@gmail.com" style="color:#B45309">
-          immorshed068@gmail.com</a>
+          ✗ Something went wrong. Please email me at
+          <a href="mailto:immorshed068@gmail.com" style="color:#B45309">immorshed068@gmail.com</a>
         </div>
-
         <form id="contactForm">
-          <!-- Hidden: subject line in Gmail -->
-          <input type="hidden" name="_subject"
-                 value="New message from your portfolio website 🎯">
-
+          <input type="hidden" name="_subject" value="New message from your portfolio website 🎯">
           <div class="form-row">
             <div class="fg">
               <label for="f-name">Name</label>
-              <input id="f-name" type="text" name="name"
-                     placeholder="Your name" data-fs-field required>
+              <input id="f-name" type="text" name="name" placeholder="Your name" data-fs-field required>
               <span data-fs-error="name" style="font-size:0.72rem;color:#DC2626;margin-top:2px;"></span>
             </div>
             <div class="fg">
               <label for="f-company">Company</label>
-              <input id="f-company" type="text" name="company"
-                     placeholder="Your company">
+              <input id="f-company" type="text" name="company" placeholder="Your company">
             </div>
           </div>
-
           <div class="fg">
             <label for="f-email">Email</label>
-            <input id="f-email" type="email" name="email"
-                   placeholder="your@email.com" data-fs-field required>
+            <input id="f-email" type="email" name="email" placeholder="your@email.com" data-fs-field required>
             <span data-fs-error="email" style="font-size:0.72rem;color:#DC2626;margin-top:2px;"></span>
           </div>
-
           <div class="fg">
             <label for="f-msg">Message</label>
-            <textarea id="f-msg" name="message" rows="5"
-                      placeholder="Tell me about the opportunity..."
-                      data-fs-field required></textarea>
+            <textarea id="f-msg" name="message" rows="5" placeholder="Tell me about the opportunity..." data-fs-field required></textarea>
             <span data-fs-error="message" style="font-size:0.72rem;color:#DC2626;margin-top:2px;"></span>
           </div>
-
-          <button type="submit" class="send" data-fs-submit-btn>
-            Send Message
-          </button>
+          <button type="submit" class="send" data-fs-submit-btn>Send Message</button>
         </form>
-
-        <!-- Formspree Ajax SDK -->
         <script>
-          window.formspree = window.formspree || function(){
-            (formspree.q = formspree.q || []).push(arguments);
-          };
-          formspree('initForm', {
-            formElement: '#contactForm',
-            formId: 'mnjlbzpz'
-          });
+          window.formspree = window.formspree || function(){ (formspree.q = formspree.q || []).push(arguments); };
+          formspree('initForm', { formElement: '#contactForm', formId: 'mnjlbzpz' });
         </script>
         <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
       </div>
@@ -844,29 +1022,160 @@ footer {
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <span class="fc">© 2025 Muhammad Morshedul Islam · Riyadh, Saudi Arabia</span>
-  <div class="fl">
-    <a href="mailto:immorshed068@gmail.com">Email</a>
-    <a href="https://linkedin.com/in/immorshed12" target="_blank">LinkedIn</a>
-    <a href="https://www.behance.net/immorshed12" target="_blank">Behance</a>
-    <a href="https://wa.me/966573255396" target="_blank">WhatsApp</a>
+<!-- ═══ FOOTER / CONNECT BLOCK ═══ -->
+<div class="ctf-block">
+  <div class="ctf-inner">
+
+    <h2 class="ctf-heading">Ready to connect?</h2>
+    <hr class="ctf-rule">
+    <p class="ctf-sub">Whether you need meticulous financial reporting, robust ERP optimization, or 100% ZATCA compliance — let's discuss how my expertise can secure your financial operations.</p>
+
+    <!-- Contact cards -->
+    <div class="ctf-cards reveal">
+
+      <!-- Email -->
+      <a href="mailto:immorshed068@gmail.com" class="ctf-card">
+        <div class="ctf-card-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+        </div>
+        <span class="ctf-card-label">Email</span>
+      </a>
+
+      <!-- WhatsApp KSA -->
+      <a href="https://wa.me/966573255396" target="_blank" class="ctf-card">
+        <div class="ctf-card-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </div>
+        <span class="ctf-card-label">WhatsApp<br>(KSA)</span>
+      </a>
+
+      <!-- WhatsApp BD -->
+      <a href="https://wa.me/8801832984186" target="_blank" class="ctf-card">
+        <div class="ctf-card-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </div>
+        <span class="ctf-card-label">WhatsApp<br>(BD)</span>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://linkedin.com/in/immorshed12" target="_blank" class="ctf-card">
+        <div class="ctf-card-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </div>
+        <span class="ctf-card-label">LinkedIn</span>
+      </a>
+
+    </div>
+
+    <!-- Behance row -->
+    <div class="ctf-behance-row">
+      <p class="ctf-behance-label">Or view my design work</p>
+      <a href="https://www.behance.net/immorshed12" target="_blank" class="ctf-behance-btn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.2.836 1.884 2.102 1.884.914 0 1.449-.421 1.638-1.04l3.016.165zm-5.110-3.234c-.073-.95-.547-1.64-1.637-1.64-.957 0-1.596.61-1.703 1.64h3.34zM7.631 7.5c0-1.008-.73-1.5-1.951-1.5H4v3h1.68c1.221 0 1.951-.492 1.951-1.5zm-.231 5c0-1.14-.823-1.75-2.089-1.75H4v3.5h1.311c1.266 0 2.089-.61 2.089-1.75zM12 17.5c0-3.866-3.134-7-7-7H0V6h5c2.761 0 5 2.239 5 5 0 .34-.034.671-.1.993C11.413 11.11 12 12.5 12 14c0 1.933-.784 3.683-2.05 4.963L12 22h-2.875L7.5 19.5c-.483.152-.995.233-1.527.233H0V6h5c-.034 0-.067 0-.101.001C4.899 6 4.9 17.5 12 17.5z"/></svg>
+        Behance Portfolio
+      </a>
+    </div>
+
+    <!-- Footer bar -->
+    <div class="ctf-footer-bar">
+      <div class="ctf-footer-brand">
+        <div class="ctf-footer-mi">MI<span>.</span></div>
+        <div class="ctf-footer-tagline">Financial Accountant | Tax &amp; VAT Compliance Specialist</div>
+      </div>
+      <div class="ctf-footer-copy">
+        © 2026 Muhammad Morshedul Islam.<br>All rights reserved.
+      </div>
+    </div>
+
   </div>
-</footer>
+</div>
 
 <script>
+// ── Mobile drawer ──
 function openD(){ document.getElementById('drawer').classList.add('on'); document.body.style.overflow='hidden'; }
 function closeD(){ document.getElementById('drawer').classList.remove('on'); document.body.style.overflow=''; }
 
-const io = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('on'); io.unobserve(x.target); } }), { threshold: 0.07, rootMargin: '0px 0px -24px 0px' });
+// ── Page load fade-in ──
+document.body.style.opacity = '0';
+document.body.style.transition = 'opacity 0.5s ease';
+window.addEventListener('load', () => {
+  requestAnimationFrame(() => { document.body.style.opacity = '1'; });
+});
+
+// ── Scroll reveal with stagger ──
+const io = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    el.classList.add('on');
+    Array.from(el.children).forEach((child, i) => {
+      child.style.opacity = '0';
+      child.style.transform = 'translateY(14px)';
+      child.style.transition = `opacity 0.65s cubic-bezier(0.16,1,0.3,1) ${i * 0.06}s,
+                                 transform 0.65s cubic-bezier(0.16,1,0.3,1) ${i * 0.06}s`;
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          child.style.opacity = '1';
+          child.style.transform = 'none';
+        }, 10);
+      });
+    });
+    io.unobserve(el);
+  });
+}, { threshold: 0.06, rootMargin: '0px 0px -32px 0px' });
+
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// Nav scroll shadow
+// ── Nav: shadow + subtle shrink on scroll ──
+const navEl = document.querySelector('nav');
 window.addEventListener('scroll', () => {
-  document.querySelector('nav').style.boxShadow =
-    window.scrollY > 40 ? '0 1px 20px rgba(0,0,0,0.06)' : 'none';
+  if (window.scrollY > 40) {
+    navEl.style.boxShadow = '0 1px 24px rgba(0,0,0,0.07)';
+    navEl.style.height = '54px';
+  } else {
+    navEl.style.boxShadow = 'none';
+    navEl.style.height = '60px';
+  }
+}, { passive: true });
+
+// ── Smooth anchor scrolling ──
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    if (!id || id === '#') return;
+    const target = document.querySelector(id);
+    if (!target) return;
+    e.preventDefault();
+    closeD();
+    setTimeout(() => {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 50);
+  });
 });
+
+// ── Active nav link highlight on scroll ──
+const sections = document.querySelectorAll('section[id], .ctf-block');
+const navLinks = document.querySelectorAll('.nav-r a[href^="#"]');
+const observer2 = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      navLinks.forEach(link => {
+        link.style.color = link.getAttribute('href') === `#${id}`
+          ? 'var(--gold)' : '';
+      });
+    }
+  });
+}, { threshold: 0.4 });
+sections.forEach(s => observer2.observe(s));
 </script>
 </body>
 </html>
