@@ -3,523 +3,649 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Morshedul Islam — Financial Accountant · KSA · GCC · Bangladesh</title>
-<meta name="description" content="Bangladeshi Financial Accountant in Riyadh with 4+ years in VAT/Tax Compliance, ERP Systems (SAP, Zohobooks, Odoo, Qoyod, ERPNext), and Cash Flow Management. Open to work in KSA, Bangladesh, UAE, Qatar, Kuwait, Oman, Bahrain.">
-<meta name="keywords" content="Financial Accountant Riyadh, VAT Compliance KSA, SAP Accountant, Zohobooks, Odoo, ERPNext, Bangladeshi Accountant Saudi Arabia, ZATCA VAT, Zakat, GCC Accountant">
+<title>Morshedul Islam — Financial Accountant</title>
+<meta name="description" content="Bangladeshi Financial Accountant in Riyadh. 4+ years in VAT/Tax Compliance, ERP Systems (SAP, Zohobooks, Odoo, Qoyod, ERPNext), Cash Flow Management. Open to work in KSA, Bangladesh, UAE, Qatar, Kuwait, Oman, Bahrain.">
+<meta name="keywords" content="Financial Accountant Riyadh, VAT Compliance KSA, SAP, Zohobooks, Odoo, ERPNext, Qoyod, Bangladeshi Accountant Saudi Arabia, ZATCA, Zakat, GCC Accountant">
 <meta name="author" content="Muhammad Morshedul Islam">
-<meta property="og:title" content="Morshedul Islam — Financial Accountant & Compliance Specialist">
-<meta property="og:description" content="4+ years driving 40%+ financial accuracy improvements across manufacturing and trading in Saudi Arabia. Open to work across the GCC and Bangladesh.">
+<meta property="og:title" content="Morshedul Islam — Financial Accountant">
+<meta property="og:description" content="4+ years driving 40%+ accuracy improvements across manufacturing and trading in Saudi Arabia. Open to work across GCC and Bangladesh.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-/* ═══════════════════════════════════════
-   THE LEDGER — A Finance Professional's Portfolio
-   Concept: Precision of a financial ledger —
-   ruled lines, gold ink, cream paper, dark ink.
-   Clean. Purposeful. Every element earns its place.
-═══════════════════════════════════════ */
+/*
+  DESIGN PHILOSOPHY — inspired by:
+  · Pegasus Capital (text-first, outcomes-led, minimal nav)
+  · Linear.app (generous whitespace, precise typography)
+  · Top CPA firms (cream + dark ink, trust-first)
+
+  RULES:
+  · Everything on white/cream — no dark/light alternating = no fatigue
+  · One accent color — gold, used sparingly
+  · Max 5 nav items
+  · No cards piled on cards
+  · Sections breathe — lots of vertical space
+  · Text does the work, not decoration
+*/
+
 :root {
-  --ink:       #0F1C2E;
-  --ink-soft:  #3D4F63;
-  --ink-faint: #8A9BAD;
-  --gold:      #B8965A;
-  --gold-lt:   #D4AE7A;
-  --gold-pale: #F8F2E6;
-  --cream:     #FAFAF7;
-  --white:     #FFFFFF;
-  --rule:      rgba(184,150,90,0.15);
-  --line:      rgba(15,28,46,0.07);
-  --r:         3px;
-  --rlg:       10px;
+  --ink:    #111827;
+  --soft:   #6B7280;
+  --faint:  #9CA3AF;
+  --line:   #E5E7EB;
+  --gold:   #B45309;
+  --bg:     #FFFFFF;
+  --cream:  #FAFAF8;
+  --r:      4px;
 }
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
-::-webkit-scrollbar{width:3px}
-::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:62px;background:rgba(250,250,247,0.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);transition:box-shadow .3s}
-nav.scrolled{box-shadow:0 1px 24px rgba(15,28,46,.07)}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:.01em}
-.nav-logo span{color:var(--gold)}
-.nav-links{display:flex;align-items:center;gap:2.25rem;list-style:none}
-.nav-links a{text-decoration:none;color:var(--ink-soft);font-size:.77rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;transition:color .2s}
-.nav-links a:hover{color:var(--gold)}
-.nav-hire{background:var(--ink);color:var(--white)!important;padding:.48rem 1.2rem;border-radius:var(--r);font-size:.75rem!important;transition:background .2s!important}
-.nav-hire:hover{background:var(--gold)!important}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
-.hamburger span{width:22px;height:1.5px;background:var(--ink);display:block}
-
-/* MOBILE DRAWER */
-.drawer{display:none;position:fixed;inset:0;z-index:200;background:var(--ink);flex-direction:column;align-items:center;justify-content:center;gap:2rem}
-.drawer.open{display:flex}
-.drawer a{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s}
-.drawer a:hover{color:var(--gold)}
-.drawer-x{position:absolute;top:1.5rem;right:6%;background:none;border:none;color:rgba(255,255,255,.35);font-size:1.4rem;cursor:pointer}
-
-/* SHARED */
-section{padding:6rem 6%}
-.wrap{max-width:1140px;margin:0 auto}
-.eyebrow{font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:.55rem;margin-bottom:.9rem}
-.eyebrow::before{content:'';width:22px;height:1px;background:var(--gold)}
-.sh{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.12;color:var(--ink);margin-bottom:.9rem}
-.sl{font-size:.97rem;color:var(--ink-soft);line-height:1.82;max-width:570px}
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
-.reveal.vis{opacity:1;transform:none}
-@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-
-/* ═══ HERO ═══ */
-#hero{min-height:100vh;padding-top:62px;background:var(--ink);display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden}
-/* Ledger line texture */
-#hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(184,150,90,.055) 59px,rgba(184,150,90,.055) 60px);pointer-events:none}
-/* Vertical rule */
-.hero-rule{position:absolute;left:50%;top:10%;bottom:10%;width:1px;background:rgba(184,150,90,.1)}
-
-.hero-l{padding:5rem 3.5rem 5rem 6%;position:relative;z-index:1}
-.hero-badge{display:inline-flex;align-items:center;gap:.55rem;background:rgba(184,150,90,.1);border:1px solid rgba(184,150,90,.22);color:var(--gold-lt);padding:.38rem .95rem;border-radius:100px;font-size:.71rem;font-weight:500;letter-spacing:.06em;margin-bottom:1.8rem;animation:up .7s .1s both}
-.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5.5vw,5.2rem);font-weight:700;color:#fff;line-height:1;margin-bottom:.4rem;animation:up .7s .2s both}
-.hero-role{font-family:'Cormorant Garamond',serif;font-size:clamp(1.05rem,1.9vw,1.55rem);font-weight:400;color:var(--gold);letter-spacing:.03em;margin-bottom:1.8rem;animation:up .7s .3s both}
-.hero-desc{font-size:.93rem;color:rgba(255,255,255,.48);line-height:1.88;max-width:400px;margin-bottom:2.2rem;animation:up .7s .4s both}
-.hero-desc strong{color:rgba(255,255,255,.8);font-weight:500}
-.hero-btns{display:flex;gap:.85rem;flex-wrap:wrap;animation:up .7s .5s both}
-.btn-gold{background:var(--gold);color:var(--ink);padding:.78rem 1.7rem;border-radius:var(--r);font-size:.82rem;font-weight:600;text-decoration:none;letter-spacing:.03em;transition:all .2s;display:inline-flex;align-items:center;gap:.45rem}
-.btn-gold:hover{background:var(--gold-lt);transform:translateY(-2px)}
-.btn-ghost{border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.68);padding:.78rem 1.7rem;border-radius:var(--r);font-size:.82rem;font-weight:400;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center}
-.btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
-
-.hero-r{padding:5rem 6% 5rem 3.5rem;position:relative;z-index:1;animation:up .8s .3s both}
-.kpi-label{font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:1.4rem;font-weight:500}
-.kpi-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid rgba(184,150,90,.1);border-radius:var(--rlg);overflow:hidden}
-.kpi{background:rgba(255,255,255,.03);padding:1.5rem;border-bottom:1px solid rgba(184,150,90,.07);border-right:1px solid rgba(184,150,90,.07);transition:background .2s}
-.kpi:hover{background:rgba(184,150,90,.06)}
-.kpi:nth-child(2n){border-right:none}
-.kpi:nth-last-child(-n+2){border-bottom:none}
-.kpi-n{font-family:'Cormorant Garamond',serif;font-size:2.3rem;font-weight:700;color:var(--gold);line-height:1;margin-bottom:.25rem}
-.kpi-d{font-size:.73rem;color:rgba(255,255,255,.33);line-height:1.5}
-
-/* Open to work — ONE place only */
-.hero-otw{margin-top:1.75rem;padding:1.2rem 1.4rem;background:rgba(255,255,255,.03);border:1px solid rgba(184,150,90,.1);border-radius:var(--rlg)}
-.otw-lbl{font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:.7rem}
-.flags{display:flex;flex-wrap:wrap;gap:.45rem}
-.flag{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);color:rgba(255,255,255,.62);font-size:.72rem;padding:.28rem .72rem;border-radius:100px;transition:all .2s}
-.flag:hover{border-color:var(--gold);color:var(--gold-lt)}
-.otw-note{font-size:.66rem;color:rgba(255,255,255,.18);margin-top:.7rem;font-style:italic}
-
-/* ═══ ABOUT ═══ */
-#about{background:var(--white);border-top:1px solid var(--line)}
-.about-grid{display:grid;grid-template-columns:220px 1fr;gap:4.5rem;margin-top:3.5rem;align-items:start}
-.sidebar{}
-.sb-row{padding:.85rem 0;border-bottom:1px solid var(--line)}
-.sb-row:first-child{border-top:1px solid var(--line)}
-.sb-lbl{font-size:.63rem;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-faint);margin-bottom:.2rem}
-.sb-val{font-size:.87rem;color:var(--ink);font-weight:500;line-height:1.5}
-.sb-val a{color:var(--gold);text-decoration:none}
-.sb-val a:hover{text-decoration:underline}
-.about-body p{font-size:.96rem;line-height:1.9;color:var(--ink-soft);margin-bottom:1.15rem}
-.about-body strong{color:var(--ink);font-weight:600}
-.pullquote{margin-top:1.5rem;padding:1.4rem 1.7rem;border-left:3px solid var(--gold);background:var(--gold-pale);border-radius:0 var(--r) var(--r) 0}
-.pullquote p{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--ink);line-height:1.65;font-style:italic;margin:0}
-
-/* ═══ SKILLS ═══ */
-#skills{background:var(--cream);border-top:1px solid var(--line)}
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1px;margin-top:3.5rem;border:1px solid var(--line);border-radius:var(--rlg);overflow:hidden}
-.sk{background:var(--white);padding:1.85rem;position:relative;transition:background .22s}
-.sk::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--gold);transform:scaleY(0);transform-origin:bottom;transition:transform .3s}
-.sk:hover{background:var(--gold-pale)}
-.sk:hover::before{transform:scaleY(1)}
-.sk-icon{font-size:1.3rem;margin-bottom:.85rem;display:block}
-.sk-name{font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-bottom:.9rem}
-.sk-tags{display:flex;flex-wrap:wrap;gap:.38rem}
-.t{background:rgba(15,28,46,.05);color:var(--ink-soft);font-size:.73rem;padding:.26rem .72rem;border-radius:100px;border:1px solid transparent;transition:all .18s}
-.t:hover{border-color:var(--gold);color:var(--gold)}
-.t.p{background:rgba(184,150,90,.09);color:var(--gold);border-color:rgba(184,150,90,.22)}
-
-/* ═══ EXPERIENCE ═══ */
-#experience{background:var(--white);border-top:1px solid var(--line)}
-.exp-list{margin-top:3.5rem}
-.exp{display:grid;grid-template-columns:190px 1fr;gap:2.5rem;padding:2.5rem 0;border-bottom:1px solid var(--line)}
-.exp:last-child{border-bottom:none}
-.exp-l{}
-.exp-period{font-size:.7rem;color:var(--gold);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.35rem}
-.exp-co{font-size:.82rem;color:var(--ink-soft);line-height:1.5}
-.exp-loc{font-size:.71rem;color:var(--ink-faint);margin-top:.2rem}
-.exp-tag{display:inline-block;margin-top:.75rem;background:rgba(184,150,90,.08);color:var(--gold);border:1px solid rgba(184,150,90,.18);font-size:.65rem;letter-spacing:.07em;text-transform:uppercase;padding:.25rem .75rem;border-radius:100px;font-weight:600}
-.exp-r{}
-.exp-role{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--ink);margin-bottom:.95rem;line-height:1.2}
-.impacts{display:flex;flex-direction:column;gap:.55rem}
-.imp{display:flex;gap:.7rem;align-items:flex-start}
-.imp-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);margin-top:.58rem;flex-shrink:0}
-.imp p{font-size:.87rem;color:var(--ink-soft);line-height:1.72}
-.imp strong{color:var(--ink);font-weight:600}
-
-/* ═══ SERVICES ═══ */
-#services{background:var(--ink);border-top:1px solid rgba(184,150,90,.08)}
-#services .sh{color:#fff}
-#services .sl{color:rgba(255,255,255,.42)}
-.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1px;margin-top:3.5rem;border:1px solid rgba(184,150,90,.08);border-radius:var(--rlg);overflow:hidden}
-.svc{background:rgba(255,255,255,.03);padding:1.85rem;position:relative;transition:background .22s}
-.svc:hover{background:rgba(184,150,90,.06)}
-.svc-n{font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-weight:700;color:rgba(184,150,90,.07);line-height:1;position:absolute;top:.9rem;right:1.4rem}
-.svc h3{font-size:.88rem;font-weight:600;color:#fff;margin-bottom:.6rem}
-.svc p{font-size:.81rem;color:rgba(255,255,255,.38);line-height:1.78}
-
-/* ═══ DESIGN PORTFOLIO ═══ */
-#design{background:var(--cream);border-top:1px solid var(--line)}
-.bbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:1rem;margin-bottom:3rem;padding-bottom:1.5rem;border-bottom:1px solid var(--line)}
-.bstats{display:flex;gap:2.5rem}
-.bs-n{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:700;color:var(--gold);line-height:1}
-.bs-l{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-faint);margin-top:.12rem}
-.behance-btn{display:inline-flex;align-items:center;gap:.45rem;border:1px solid var(--gold);color:var(--gold);padding:.58rem 1.25rem;border-radius:var(--r);font-size:.77rem;font-weight:600;text-decoration:none;letter-spacing:.04em;transition:all .2s}
-.behance-btn:hover{background:var(--gold);color:var(--ink)}
-.dgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
-.dgrid .feat{grid-column:span 2}
-.dc{border-radius:var(--rlg);overflow:hidden;border:1px solid var(--line);background:var(--white);text-decoration:none;display:block;transition:all .25s;position:relative}
-.dc:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(15,28,46,.1);border-color:var(--gold)}
-.dc:hover .dco{opacity:1}
-.dc:hover .dimg{transform:scale(1.04)}
-.dthumb{width:100%;overflow:hidden;background:var(--gold-pale);position:relative}
-.feat .dthumb{aspect-ratio:16/8}
-.dc:not(.feat) .dthumb{aspect-ratio:4/3}
-.dimg{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
-.dfb{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2.5rem}
-.dco{position:absolute;inset:0;background:rgba(184,150,90,.12);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s}
-.dco span{background:var(--gold);color:var(--ink);font-size:.71rem;font-weight:700;padding:.45rem 1.15rem;border-radius:100px;letter-spacing:.05em}
-.dinfo{padding:1rem 1.2rem}
-.dtype{font-size:.63rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);font-weight:600;margin-bottom:.28rem}
-.dname{font-size:.87rem;font-weight:600;color:var(--ink);line-height:1.4;margin-bottom:.45rem}
-.dmeta{font-size:.71rem;color:var(--ink-faint)}
-@media(max-width:700px){.dgrid{grid-template-columns:1fr}.dgrid .feat{grid-column:span 1}.feat .dthumb{aspect-ratio:4/3}}
-
-/* ═══ CERTIFICATIONS ═══ */
-#certifications{background:var(--white);border-top:1px solid var(--line)}
-.cert-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3.5rem;align-items:start}
-.cert-glbl{font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-faint);margin-bottom:.9rem;padding-bottom:.7rem;border-bottom:1px solid var(--line)}
-.cert-list{display:flex;flex-direction:column}
-.cert-row{display:flex;align-items:center;gap:.9rem;padding:.85rem 0;border-bottom:1px solid var(--line)}
-.cert-row:last-child{border-bottom:none}
-.cdot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.cdot.e{background:var(--gold)}
-.cdot.p{background:transparent;border:1.5px solid var(--ink-faint)}
-.cinfo{flex:1}
-.cn{font-size:.86rem;font-weight:500;color:var(--ink)}
-.ci{font-size:.72rem;color:var(--ink-faint);margin-top:.1rem}
-.cbadge{font-size:.63rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.22rem .62rem;border-radius:100px;white-space:nowrap}
-.cbadge.e{background:rgba(184,150,90,.1);color:var(--gold)}
-.cbadge.p{background:rgba(15,28,46,.05);color:var(--ink-faint)}
-.cbadge.ip{background:rgba(37,99,235,.07);color:#1d4ed8}
-
-/* ═══ CONTACT ═══ */
-#contact{background:var(--ink);border-top:1px solid rgba(184,150,90,.08)}
-#contact .sh{color:#fff}
-#contact .sl{color:rgba(255,255,255,.4)}
-.contact-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:5rem;margin-top:3.5rem;align-items:start}
-.clinks{display:flex;flex-direction:column}
-.cl{display:flex;gap:.9rem;align-items:flex-start;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.06);text-decoration:none;transition:opacity .2s}
-.cl:first-child{border-top:1px solid rgba(255,255,255,.06)}
-.cl:hover{opacity:.72}
-.cl-ico{width:34px;height:34px;border-radius:var(--r);background:rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
-.cl-t{font-size:.63rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:.12rem}
-.cl-v{font-size:.87rem;color:rgba(255,255,255,.78)}
-.cform{display:flex;flex-direction:column;gap:.85rem}
-.fpair{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
-.fg{display:flex;flex-direction:column;gap:.32rem}
-.fg label{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.28)}
-.fg input,.fg textarea{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--r);padding:.72rem .95rem;color:rgba(255,255,255,.85);font-family:'Outfit',sans-serif;font-size:.87rem;width:100%;resize:none;outline:none;transition:border-color .2s}
-.fg input:focus,.fg textarea:focus{border-color:var(--gold)}
-.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.2)}
-.sbtn{background:var(--gold);color:var(--ink);border:none;padding:.88rem 1.8rem;border-radius:var(--r);font-family:'Outfit',sans-serif;font-size:.87rem;font-weight:700;cursor:pointer;letter-spacing:.03em;transition:all .2s;display:flex;align-items:center;justify-content:space-between}
-.sbtn:hover{background:var(--gold-lt);transform:translateY(-2px)}
-
-/* FOOTER */
-footer{background:rgba(0,0,0,.35);padding:1.75rem 6%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.fc{font-size:.73rem;color:rgba(255,255,255,.22)}
-.fl{display:flex;gap:1.5rem}
-.fl a{font-size:.73rem;color:rgba(255,255,255,.22);text-decoration:none;transition:color .2s}
-.fl a:hover{color:var(--gold)}
-
-/* RESPONSIVE */
-@media(max-width:960px){
-  #hero{grid-template-columns:1fr;min-height:auto;padding-top:62px}
-  .hero-rule{display:none}
-  .hero-l{padding:4rem 5%}
-  .hero-r{padding:0 5% 4rem}
-  .about-grid{grid-template-columns:1fr;gap:2.5rem}
-  .exp{grid-template-columns:1fr;gap:.65rem}
-  .contact-grid{grid-template-columns:1fr;gap:3rem}
-  .cert-layout{grid-template-columns:1fr;gap:2.5rem}
-  .nav-links{display:none}
-  .hamburger{display:flex}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
-@media(max-width:600px){
-  section{padding:4rem 5%}
-  .fpair{grid-template-columns:1fr}
-  .kpi-grid{grid-template-columns:1fr 1fr}
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-thumb { background: var(--gold); }
+
+/* ─ NAV ─ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 99;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 7%; height: 60px;
+}
+.logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1rem; color: var(--ink); text-decoration: none;
+}
+.logo em { font-style: italic; color: var(--gold); }
+.nav-r { display: flex; align-items: center; gap: 2rem; }
+.nav-r a {
+  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--soft); text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-r a:hover { color: var(--ink); }
+.nav-cta {
+  font-size: 0.78rem; font-weight: 500;
+  background: var(--ink); color: #fff !important;
+  padding: 0.45rem 1.1rem; border-radius: var(--r);
+  letter-spacing: 0.04em; transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(--gold) !important; }
+.hbg { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 4px; }
+.hbg span { width: 20px; height: 1.5px; background: var(--ink); display: block; }
+
+/* DRAWER */
+.drawer {
+  display: none; position: fixed; inset: 0; z-index: 200;
+  background: var(--bg); flex-direction: column;
+  align-items: flex-start; justify-content: center;
+  padding: 0 7%; gap: 1.5rem;
+}
+.drawer.on { display: flex; }
+.drawer a {
+  font-family: 'DM Serif Display', serif; font-size: 2.2rem;
+  color: var(--ink); text-decoration: none;
+}
+.drawer-x {
+  position: absolute; top: 1.2rem; right: 7%;
+  background: none; border: none; font-size: 1.4rem;
+  color: var(--soft); cursor: pointer;
+}
+
+/* ─ SHARED ─ */
+.section { padding: 7rem 7%; }
+.wrap { max-width: 960px; margin: 0 auto; }
+.label {
+  font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold);
+  display: block; margin-bottom: 1rem;
+}
+.h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 400; line-height: 1.1;
+  color: var(--ink); margin-bottom: 1.25rem;
+}
+.h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 400; line-height: 1.15;
+  color: var(--ink); margin-bottom: 1rem;
+}
+.body-text {
+  font-size: 1rem; color: var(--soft);
+  line-height: 1.85; max-width: 600px;
+}
+.divider { border: none; border-top: 1px solid var(--line); }
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.on { opacity: 1; transform: none; }
+
+/* ─ HERO ─ */
+#hero {
+  min-height: 100vh; padding-top: 60px;
+  background: var(--cream);
+  display: flex; align-items: center;
+  padding-left: 7%; padding-right: 7%;
+  border-bottom: 1px solid var(--line);
+}
+.hero-inner { max-width: 960px; width: 100%; margin: 0 auto; }
+.hero-status {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.75rem; color: var(--soft); margin-bottom: 2.5rem;
+  letter-spacing: 0.04em;
+}
+.dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #16A34A; flex-shrink: 0;
+  animation: blink 2s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.hero-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(3.5rem, 9vw, 7.5rem);
+  font-weight: 400; line-height: 0.95;
+  color: var(--ink); letter-spacing: -0.02em;
+  margin-bottom: 1.75rem;
+}
+.hero-name em { font-style: italic; color: var(--gold); }
+.hero-role {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--soft); font-weight: 300;
+  margin-bottom: 2.5rem; max-width: 520px; line-height: 1.7;
+}
+.hero-role strong { color: var(--ink); font-weight: 500; }
+.hero-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 5rem; }
+.btn-dark {
+  background: var(--ink); color: #fff;
+  padding: 0.75rem 1.75rem; border-radius: var(--r);
+  font-size: 0.85rem; font-weight: 500; text-decoration: none;
+  transition: background 0.2s;
+}
+.btn-dark:hover { background: var(--gold); }
+.btn-line {
+  color: var(--ink); font-size: 0.85rem; font-weight: 500;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem;
+  border-bottom: 1px solid var(--line); padding-bottom: 2px;
+  transition: border-color 0.2s;
+}
+.btn-line:hover { border-color: var(--ink); }
+
+/* Hero bottom bar — 4 KPIs */
+.hero-kpis {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line); padding-top: 2.5rem;
+  gap: 2rem;
+}
+.kpi-n {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.2rem; font-weight: 400; color: var(--ink);
+  line-height: 1; margin-bottom: 0.35rem;
+}
+.kpi-n span { font-size: 1.2rem; color: var(--gold); }
+.kpi-l { font-size: 0.78rem; color: var(--soft); line-height: 1.5; }
+
+/* ─ ABOUT ─ */
+#about { background: var(--bg); }
+.about-cols {
+  display: grid; grid-template-columns: 1fr 1.6fr;
+  gap: 6rem; margin-top: 3.5rem; align-items: start;
+}
+.about-meta { display: flex; flex-direction: column; }
+.meta-row {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--line);
+  display: flex; flex-direction: column; gap: 0.2rem;
+}
+.meta-row:first-child { border-top: 1px solid var(--line); }
+.meta-k { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--faint); }
+.meta-v { font-size: 0.9rem; color: var(--ink); font-weight: 400; }
+.meta-v a { color: var(--gold); text-decoration: none; }
+.meta-v a:hover { text-decoration: underline; }
+.about-text p { font-size: 0.97rem; color: var(--soft); line-height: 1.9; margin-bottom: 1.1rem; }
+.about-text strong { color: var(--ink); font-weight: 500; }
+.blockquote {
+  margin-top: 2rem;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--gold);
+}
+.blockquote p {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1rem; font-style: italic;
+  color: var(--ink); line-height: 1.65; margin: 0 !important;
+}
+
+/* ─ SKILLS ─ */
+#skills { background: var(--cream); }
+.skills-table { margin-top: 3.5rem; }
+.skill-row {
+  display: grid; grid-template-columns: 200px 1fr;
+  gap: 2rem; padding: 1.5rem 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+.skill-row:first-child { border-top: 1px solid var(--line); }
+.sk-cat { font-size: 0.78rem; font-weight: 500; color: var(--ink); letter-spacing: 0.02em; padding-top: 0.1rem; }
+.sk-items { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.tag {
+  font-size: 0.76rem; color: var(--soft);
+  background: var(--bg); border: 1px solid var(--line);
+  padding: 0.28rem 0.8rem; border-radius: 100px;
+  transition: all 0.15s;
+}
+.tag:hover { border-color: var(--gold); color: var(--gold); }
+.tag.hi { background: #FEF3C7; border-color: #FDE68A; color: var(--gold); }
+
+/* ─ EXPERIENCE ─ */
+#experience { background: var(--bg); }
+.exp-list { margin-top: 3.5rem; }
+.exp-row {
+  display: grid; grid-template-columns: 200px 1fr;
+  gap: 2rem; padding: 2.5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.exp-row:first-child { border-top: 1px solid var(--line); }
+.exp-row:last-child { border-bottom: none; }
+.exp-aside {}
+.exp-period { font-size: 0.72rem; color: var(--gold); font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.3rem; }
+.exp-co { font-size: 0.85rem; color: var(--soft); margin-bottom: 0.15rem; }
+.exp-place { font-size: 0.75rem; color: var(--faint); }
+.exp-badge { display: inline-block; margin-top: 0.6rem; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold); border: 1px solid #FDE68A; background: #FEF3C7; padding: 0.2rem 0.65rem; border-radius: 100px; font-weight: 500; }
+.exp-main {}
+.exp-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.35rem; font-weight: 400; color: var(--ink);
+  margin-bottom: 1rem; line-height: 1.2;
+}
+.bullets { display: flex; flex-direction: column; gap: 0.5rem; }
+.bullet { display: flex; gap: 0.8rem; align-items: flex-start; }
+.b-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); margin-top: 0.65rem; flex-shrink: 0; }
+.bullet p { font-size: 0.88rem; color: var(--soft); line-height: 1.72; }
+.bullet strong { color: var(--ink); font-weight: 500; }
+
+/* ─ SERVICES ─ */
+#services { background: var(--cream); }
+.svc-list { margin-top: 3.5rem; }
+.svc-row {
+  display: grid; grid-template-columns: 60px 200px 1fr;
+  gap: 2rem; padding: 1.5rem 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+.svc-row:first-child { border-top: 1px solid var(--line); }
+.svc-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1rem; color: var(--faint); font-style: italic;
+}
+.svc-name { font-size: 0.9rem; font-weight: 500; color: var(--ink); padding-top: 0.1rem; }
+.svc-desc { font-size: 0.86rem; color: var(--soft); line-height: 1.75; }
+
+/* ─ DESIGN ─ */
+#design { background: var(--bg); }
+.design-intro { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; margin-top: 3.5rem; margin-bottom: 2.5rem; }
+.behance-link {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.8rem; color: var(--gold); text-decoration: none;
+  border-bottom: 1px solid #FDE68A; padding-bottom: 1px; white-space: nowrap;
+}
+.behance-link:hover { border-color: var(--gold); }
+.dgrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.dgrid .wide { grid-column: span 2; }
+.dcard {
+  background: var(--bg); text-decoration: none; display: block;
+  overflow: hidden; transition: opacity 0.2s;
+}
+.dcard:hover { opacity: 0.82; }
+.dthumb { width: 100%; overflow: hidden; background: #F3F4F6; }
+.wide .dthumb { aspect-ratio: 16/7; }
+.dcard:not(.wide) .dthumb { aspect-ratio: 4/3; }
+.dimg { width: 100%; height: 100%; object-fit: cover; display: block; }
+.dfb { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--faint); }
+.dinfo { padding: 1rem 1.1rem 1.2rem; border-top: 1px solid var(--line); }
+.dcat { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 0.25rem; }
+.dtitle { font-size: 0.87rem; font-weight: 500; color: var(--ink); margin-bottom: 0.3rem; }
+.dmeta { font-size: 0.72rem; color: var(--faint); }
+@media(max-width:700px){.dgrid{grid-template-columns:1fr}.dgrid .wide{grid-column:span 1}.wide .dthumb{aspect-ratio:4/3}}
+
+/* ─ CERTS ─ */
+#certifications { background: var(--cream); }
+.cert-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3.5rem; }
+.cert-group-title { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--faint); padding-bottom: 0.75rem; border-bottom: 1px solid var(--line); margin-bottom: 0; }
+.cert-item { display: flex; gap: 0.85rem; align-items: flex-start; padding: 0.9rem 0; border-bottom: 1px solid var(--line); }
+.cert-item:last-child { border-bottom: none; }
+.cdot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 0.35rem; }
+.cdot.e { background: var(--gold); }
+.cdot.p { background: transparent; border: 1.5px solid var(--faint); }
+.ci-body { flex: 1; }
+.ci-name { font-size: 0.86rem; font-weight: 500; color: var(--ink); }
+.ci-sub { font-size: 0.73rem; color: var(--faint); margin-top: 0.1rem; }
+.cbadge { font-size: 0.62rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.2rem 0.6rem; border-radius: 100px; white-space: nowrap; flex-shrink: 0; margin-top: 0.15rem; }
+.cbadge.e { background: #FEF3C7; color: var(--gold); }
+.cbadge.p { background: #F3F4F6; color: var(--faint); }
+.cbadge.ip { background: #EFF6FF; color: #2563EB; }
+
+/* ─ CONTACT ─ */
+#contact { background: var(--bg); }
+.contact-cols { display: grid; grid-template-columns: 1fr 1.3fr; gap: 6rem; margin-top: 3.5rem; }
+.contact-links { display: flex; flex-direction: column; }
+.clink {
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 1rem 0; border-bottom: 1px solid var(--line);
+  text-decoration: none; transition: opacity 0.2s;
+}
+.clink:first-child { border-top: 1px solid var(--line); }
+.clink:hover { opacity: 0.65; }
+.cl-k { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--faint); flex-shrink: 0; width: 80px; padding-top: 2px; }
+.cl-v { font-size: 0.9rem; color: var(--ink); font-weight: 400; }
+.cform { display: flex; flex-direction: column; gap: 0.85rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+.fg { display: flex; flex-direction: column; gap: 0.3rem; }
+.fg label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--faint); }
+.fg input, .fg textarea {
+  font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+  border: none; border-bottom: 1px solid var(--line);
+  padding: 0.65rem 0; background: transparent;
+  color: var(--ink); outline: none; width: 100%;
+  resize: none; transition: border-color 0.2s;
+}
+.fg input:focus, .fg textarea:focus { border-bottom-color: var(--gold); }
+.fg input::placeholder, .fg textarea::placeholder { color: var(--faint); }
+.send {
+  align-self: flex-start; margin-top: 0.5rem;
+  background: var(--ink); color: #fff; border: none;
+  font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500;
+  padding: 0.8rem 2rem; border-radius: var(--r);
+  cursor: pointer; letter-spacing: 0.02em; transition: background 0.2s;
+}
+.send:hover { background: var(--gold); }
+
+.send:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+
+/* ─ FOOTER ─ */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 1.5rem 7%;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem;
+}
+.fc { font-size: 0.75rem; color: var(--faint); }
+.fl { display: flex; gap: 1.5rem; }
+.fl a { font-size: 0.75rem; color: var(--faint); text-decoration: none; transition: color 0.2s; }
+.fl a:hover { color: var(--gold); }
+
+/* ─ RESPONSIVE ─ */
+@media(max-width:900px){
+  .about-cols { grid-template-columns: 1fr; gap: 3rem; }
+  .skill-row { grid-template-columns: 1fr; gap: 0.5rem; }
+  .exp-row { grid-template-columns: 1fr; gap: 0.6rem; }
+  .svc-row { grid-template-columns: auto 1fr; gap: 1.25rem; }
+  .svc-row .svc-num { display: none; }
+  .contact-cols { grid-template-columns: 1fr; gap: 3rem; }
+  .cert-cols { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero-kpis { grid-template-columns: repeat(2,1fr); }
+  .nav-r a:not(.nav-cta) { display: none; }
+  .hbg { display: flex; }
+}
+@media(max-width:560px){
+  .section { padding: 5rem 5%; }
+  nav { padding: 0 5%; }
+  footer { padding: 1.5rem 5%; }
+  #hero { padding-left: 5%; padding-right: 5%; }
+  .form-row { grid-template-columns: 1fr; }
+  .hero-kpis { grid-template-columns: repeat(2,1fr); gap: 1.25rem; }
 }
 </style>
 </head>
 <body>
 
-<!-- MOBILE DRAWER -->
+<!-- DRAWER -->
 <div class="drawer" id="drawer">
   <button class="drawer-x" onclick="closeD()">✕</button>
   <a href="#about" onclick="closeD()">About</a>
   <a href="#skills" onclick="closeD()">Skills</a>
   <a href="#experience" onclick="closeD()">Experience</a>
   <a href="#services" onclick="closeD()">Services</a>
-  <a href="#design" onclick="closeD()">Design</a>
   <a href="#contact" onclick="closeD()">Contact</a>
 </div>
 
 <!-- NAV -->
-<nav id="nav">
-  <a href="#" class="nav-logo">Morshedul <span>Islam</span></a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#design">Design</a></li>
-    <li><a href="#contact" class="nav-hire">Hire Me</a></li>
-  </ul>
-  <button class="hamburger" onclick="openD()"><span></span><span></span><span></span></button>
+<nav>
+  <a href="#" class="logo">Morshedul <em>Islam</em></a>
+  <div class="nav-r">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#services">Services</a>
+    <a href="#contact" class="nav-cta">Hire Me</a>
+    <button class="hbg" onclick="openD()"><span></span><span></span><span></span></button>
+  </div>
 </nav>
 
-<!-- ═══════ HERO ═══════ -->
+<!-- ═══ HERO ═══ -->
 <section id="hero">
-  <div class="hero-rule"></div>
+  <div class="hero-inner">
+    <div class="hero-status"><div class="dot"></div>Open to new opportunities</div>
 
-  <div class="hero-l">
-    <div class="hero-badge">Available for New Opportunities</div>
-    <h1 class="hero-name">Morshedul<br>Islam</h1>
-    <p class="hero-role">Financial Accountant · Tax &amp; VAT Specialist</p>
-    <p class="hero-desc">
-      I help manufacturing and trading businesses in the GCC
-      <strong>eliminate compliance risk, optimize cash flow, and build financial systems that scale</strong>
-      — 4+ years of hands-on experience across Saudi Arabia and Bangladesh.
+    <h1 class="hero-name">
+      Muhammad<br>
+      Morshedul <em>Islam</em>
+    </h1>
+
+    <p class="hero-role">
+      Financial Accountant — <strong>Tax, VAT & ERP Specialist</strong><br>
+      4+ years helping manufacturing and trading businesses in the GCC<br>
+      build accurate, compliant, and scalable financial systems.
     </p>
-    <div class="hero-btns">
-      <a href="#contact" class="btn-gold">Hire Me →</a>
-      <a href="#experience" class="btn-ghost">View Experience</a>
-    </div>
-  </div>
 
-  <div class="hero-r">
-    <p class="kpi-label">Key Performance Indicators</p>
-    <div class="kpi-grid">
-      <div class="kpi"><div class="kpi-n">4+</div><div class="kpi-d">Years of progressive accounting experience</div></div>
-      <div class="kpi"><div class="kpi-n">40%+</div><div class="kpi-d">Reporting accuracy improvement delivered</div></div>
-      <div class="kpi"><div class="kpi-n">5</div><div class="kpi-d">ERP platforms mastered: SAP · Zohobooks · Odoo · Qoyod · ERPNext</div></div>
-      <div class="kpi"><div class="kpi-n">0</div><div class="kpi-d">VAT penalties — 100% ZATCA compliance record</div></div>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-dark">Get in Touch</a>
+      <a href="#experience" class="btn-line">View Experience →</a>
     </div>
-    <div class="hero-otw">
-      <p class="otw-lbl">Open to work in</p>
-      <div class="flags">
-        <span class="flag">🇸🇦 Saudi Arabia</span>
-        <span class="flag">🇧🇩 Bangladesh</span>
-        <span class="flag">🇦🇪 UAE</span>
-        <span class="flag">🇶🇦 Qatar</span>
-        <span class="flag">🇰🇼 Kuwait</span>
-        <span class="flag">🇧🇭 Bahrain</span>
-        <span class="flag">🇴🇲 Oman</span>
+
+    <div class="hero-kpis">
+      <div>
+        <div class="kpi-n">4<span>+</span></div>
+        <div class="kpi-l">Years of progressive<br>accounting experience</div>
       </div>
-      <p class="otw-note">* Relocation willingness depends on offer package</p>
+      <div>
+        <div class="kpi-n">40<span>%+</span></div>
+        <div class="kpi-l">Reporting accuracy<br>improvement delivered</div>
+      </div>
+      <div>
+        <div class="kpi-n">5</div>
+        <div class="kpi-l">ERP platforms mastered<br>SAP · Odoo · Zohobooks · Qoyod · ERPNext</div>
+      </div>
+      <div>
+        <div class="kpi-n">0</div>
+        <div class="kpi-l">VAT penalties — 100%<br>ZATCA compliance record</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════ ABOUT ═══════ -->
-<section id="about">
+<!-- ═══ ABOUT ═══ -->
+<section id="about" class="section">
   <div class="wrap">
-    <div class="eyebrow">About Me</div>
-    <h2 class="sh">Precision in Finance.<br>Clarity in Communication.</h2>
-    <div class="about-grid reveal">
-      <div class="sidebar">
-        <div class="sb-row"><div class="sb-lbl">Full Name</div><div class="sb-val">Muhammad Morshedul Islam</div></div>
-        <div class="sb-row"><div class="sb-lbl">Nationality</div><div class="sb-val">Bangladeshi 🇧🇩</div></div>
-        <div class="sb-row"><div class="sb-lbl">Location</div><div class="sb-val">Riyadh, Saudi Arabia 🇸🇦</div></div>
-        <div class="sb-row"><div class="sb-lbl">Industry</div><div class="sb-val">Manufacturing · Trading · Service</div></div>
-        <div class="sb-row"><div class="sb-lbl">Languages</div><div class="sb-val">Arabic · English · Hindi · Bengali</div></div>
-        <div class="sb-row"><div class="sb-lbl">Driving License</div><div class="sb-val">🚗 Valid · KSA &amp; Bangladesh</div></div>
-        <div class="sb-row"><div class="sb-lbl">KSA Phone</div><div class="sb-val"><a href="https://wa.me/966573255396" target="_blank">+966 573 255 396 ↗</a></div></div>
-        <div class="sb-row"><div class="sb-lbl">BD Phone</div><div class="sb-val"><a href="https://wa.me/8801832984186" target="_blank">+880 183 298 4186 ↗</a></div></div>
-        <div class="sb-row"><div class="sb-lbl">Email</div><div class="sb-val"><a href="mailto:immorshed068@gmail.com">immorshed068@gmail.com</a></div></div>
-        <div class="sb-row"><div class="sb-lbl">LinkedIn</div><div class="sb-val"><a href="https://linkedin.com/in/immorshed12" target="_blank">linkedin.com/in/immorshed12</a></div></div>
+    <span class="label">About</span>
+    <h2 class="h2">Precision in finance.<br>Clarity in communication.</h2>
+    <hr class="divider" style="margin:2rem 0">
+    <div class="about-cols reveal">
+      <div class="about-meta">
+        <div class="meta-row"><div class="meta-k">Full Name</div><div class="meta-v">Muhammad Morshedul Islam</div></div>
+        <div class="meta-row"><div class="meta-k">Nationality</div><div class="meta-v">Bangladeshi 🇧🇩</div></div>
+        <div class="meta-row"><div class="meta-k">Based In</div><div class="meta-v">Riyadh, Saudi Arabia 🇸🇦</div></div>
+        <div class="meta-row"><div class="meta-k">Languages</div><div class="meta-v">Arabic · English · Hindi · Bengali</div></div>
+        <div class="meta-row"><div class="meta-k">Driving License</div><div class="meta-v">🚗 Valid in KSA & Bangladesh</div></div>
+        <div class="meta-row"><div class="meta-k">Open to Work</div><div class="meta-v">KSA · Bangladesh · UAE · Qatar · Kuwait · Bahrain · Oman</div></div>
+        <div class="meta-row"><div class="meta-k">KSA</div><div class="meta-v"><a href="https://wa.me/966573255396" target="_blank">+966 573 255 396 (WhatsApp ↗)</a></div></div>
+        <div class="meta-row"><div class="meta-k">Bangladesh</div><div class="meta-v"><a href="https://wa.me/8801832984186" target="_blank">+880 183 298 4186 (WhatsApp ↗)</a></div></div>
+        <div class="meta-row"><div class="meta-k">Email</div><div class="meta-v"><a href="mailto:immorshed068@gmail.com">immorshed068@gmail.com</a></div></div>
+        <div class="meta-row"><div class="meta-k">LinkedIn</div><div class="meta-v"><a href="https://linkedin.com/in/immorshed12" target="_blank">linkedin.com/in/immorshed12</a></div></div>
       </div>
-      <div class="about-body">
+      <div class="about-text">
         <p>I started my accounting career in Dhaka — manually reconciling bank statements, learning why every figure matters, and discovering that <strong>good finance isn't about recording the past. It's about shaping decisions for the future.</strong></p>
-        <p>Moving to Saudi Arabia raised the stakes. I navigated ZATCA's VAT framework, handled Zakat calculations, and managed the full financial operations of a paint manufacturing company — all while becoming proficient in five ERP platforms. My core insight: <strong>most financial errors come from broken systems, not bad intentions.</strong> I build the systems that prevent them.</p>
-        <p>Today I bring 4+ years of experience across manufacturing, trading, and service industries — with a track record of improving reporting accuracy by 40%+, maintaining zero VAT penalties, and building audit-ready financial processes from the ground up. Trilingual in Arabic, English, and Hindi, I bring a rare communication edge in the GCC's multicultural business environment.</p>
-        <div class="pullquote">
-          <p>"I am passionate about building financial systems that don't just ensure compliance — they actively drive business growth."</p>
+        <p>Moving to Saudi Arabia raised the stakes. I navigated ZATCA's VAT framework, handled Zakat calculations, and managed the full financial operations of a paint manufacturing company — all while mastering five ERP platforms. My core insight: <strong>most financial errors come from broken systems, not bad intentions.</strong> I build the systems that prevent them.</p>
+        <p>Today I bring 4+ years of experience across manufacturing, trading, and service industries — improving reporting accuracy by 40%+, maintaining zero VAT penalties, and building audit-ready financial processes from the ground up. Trilingual in Arabic, English, and Hindi, I carry a rare communication edge in the GCC's multicultural business environment.</p>
+        <div class="blockquote">
+          <p>"Passionate about building financial systems that don't just ensure compliance — they actively drive business growth."</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════ SKILLS ═══════ -->
-<section id="skills">
+<!-- ═══ SKILLS ═══ -->
+<section id="skills" class="section">
   <div class="wrap">
-    <div class="eyebrow">Core Competencies</div>
-    <h2 class="sh">What I Bring to the Table</h2>
-    <p class="sl">A focused skillset built around financial accuracy, regulatory compliance, and ERP systems — the three pillars that produce measurable results.</p>
-    <div class="skills-grid reveal">
-
-      <div class="sk">
-        <span class="sk-icon">📊</span>
-        <div class="sk-name">Core Accounting</div>
-        <div class="sk-tags">
-          <span class="t p">General Ledger</span><span class="t p">AP / AR</span>
-          <span class="t">Journal Entries</span><span class="t">Bank Reconciliation</span>
-          <span class="t">Asset Depreciation</span><span class="t">Fixed Asset Register</span>
-          <span class="t">Financial Statements</span>
+    <span class="label">Core Competencies</span>
+    <h2 class="h2">A focused skillset.<br>No distractions.</h2>
+    <div class="skills-table reveal">
+      <div class="skill-row">
+        <div class="sk-cat">Core Accounting</div>
+        <div class="sk-items">
+          <span class="tag hi">General Ledger</span>
+          <span class="tag hi">AP / AR</span>
+          <span class="tag">Journal Entries</span>
+          <span class="tag">Bank Reconciliation</span>
+          <span class="tag">Asset Depreciation</span>
+          <span class="tag">Fixed Asset Register</span>
+          <span class="tag">Financial Statements</span>
         </div>
       </div>
-
-      <div class="sk">
-        <span class="sk-icon">🏛️</span>
-        <div class="sk-name">Tax &amp; Compliance · KSA</div>
-        <div class="sk-tags">
-          <span class="t p">VAT Filing · ZATCA</span><span class="t p">Zakat Calculations</span>
-          <span class="t">e-Invoicing Phase 2</span><span class="t">Data Localization</span>
-          <span class="t">Regulatory Audits</span><span class="t">Audit Documentation</span>
+      <div class="skill-row">
+        <div class="sk-cat">Tax & Compliance · KSA</div>
+        <div class="sk-items">
+          <span class="tag hi">VAT Filing · ZATCA</span>
+          <span class="tag hi">Zakat Calculations</span>
+          <span class="tag">e-Invoicing Phase 2</span>
+          <span class="tag">Data Localization</span>
+          <span class="tag">Regulatory Audits</span>
+          <span class="tag">Audit Documentation</span>
         </div>
       </div>
-
-      <div class="sk">
-        <span class="sk-icon">💻</span>
-        <div class="sk-name">ERP &amp; Software</div>
-        <div class="sk-tags">
-          <span class="t p">SAP</span><span class="t p">Zohobooks</span>
-          <span class="t p">Odoo</span><span class="t p">Qoyod</span>
-          <span class="t p">ERPNext</span>
-          <span class="t">INFO GATE</span><span class="t">Advanced Excel</span><span class="t">Power Query</span>
+      <div class="skill-row">
+        <div class="sk-cat">ERP & Software</div>
+        <div class="sk-items">
+          <span class="tag hi">SAP</span>
+          <span class="tag hi">Zohobooks</span>
+          <span class="tag hi">Odoo</span>
+          <span class="tag hi">Qoyod</span>
+          <span class="tag hi">ERPNext</span>
+          <span class="tag">INFO GATE</span>
+          <span class="tag">Advanced Excel</span>
+          <span class="tag">Power Query</span>
         </div>
       </div>
-
-      <div class="sk">
-        <span class="sk-icon">💰</span>
-        <div class="sk-name">Financial Management</div>
-        <div class="sk-tags">
-          <span class="t p">Cash Flow Management</span>
-          <span class="t">Budget Monitoring</span><span class="t">Cost Analysis</span>
-          <span class="t">Invoice Processing</span><span class="t">Expense Optimization</span>
+      <div class="skill-row">
+        <div class="sk-cat">Financial Management</div>
+        <div class="sk-items">
+          <span class="tag hi">Cash Flow Management</span>
+          <span class="tag">Budget Monitoring</span>
+          <span class="tag">Cost Analysis</span>
+          <span class="tag">Invoice Processing</span>
+          <span class="tag">Expense Optimization</span>
         </div>
       </div>
-
-      <div class="sk">
-        <span class="sk-icon">🌐</span>
-        <div class="sk-name">Languages</div>
-        <div class="sk-tags">
-          <span class="t p">Arabic — Fluent</span><span class="t p">English — Fluent</span>
-          <span class="t">Hindi — Fluent</span><span class="t">Bengali — Native</span>
+      <div class="skill-row">
+        <div class="sk-cat">Languages</div>
+        <div class="sk-items">
+          <span class="tag hi">Arabic — Fluent</span>
+          <span class="tag hi">English — Fluent</span>
+          <span class="tag">Hindi — Fluent</span>
+          <span class="tag">Bengali — Native</span>
         </div>
       </div>
-
-      <div class="sk">
-        <span class="sk-icon">🎨</span>
-        <div class="sk-name">Graphic &amp; Social Media Design</div>
-        <div class="sk-tags">
-          <span class="t p">Logo Design</span><span class="t p">Social Media Creatives</span>
-          <span class="t">Brand Identity</span><span class="t">Poster &amp; Banner</span><span class="t">Brochure Design</span>
+      <div class="skill-row">
+        <div class="sk-cat">Design (Additional)</div>
+        <div class="sk-items">
+          <span class="tag">Logo Design</span>
+          <span class="tag">Social Media Creatives</span>
+          <span class="tag">Brand Identity</span>
+          <span class="tag">Poster & Banner</span>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ═══════ EXPERIENCE ═══════ -->
-<section id="experience">
+<!-- ═══ EXPERIENCE ═══ -->
+<section id="experience" class="section">
   <div class="wrap">
-    <div class="eyebrow">Career Timeline</div>
-    <h2 class="sh">Experience Built on Real Impact</h2>
+    <span class="label">Experience</span>
+    <h2 class="h2">Built on real impact,<br>not just titles.</h2>
     <div class="exp-list reveal">
 
-      <div class="exp">
-        <div class="exp-l">
+      <div class="exp-row">
+        <div class="exp-aside">
           <div class="exp-period">Feb 2024 — Present</div>
           <div class="exp-co">Sico Paints Factory Co.</div>
-          <div class="exp-loc">📍 Riyadh, Saudi Arabia</div>
-          <span class="exp-tag">Current Role</span>
+          <div class="exp-place">Riyadh, Saudi Arabia</div>
+          <span class="exp-badge">Current</span>
         </div>
-        <div class="exp-r">
-          <div class="exp-role">Accountant</div>
-          <div class="impacts">
-            <div class="imp"><div class="imp-dot"></div><p><strong>Improved reporting accuracy by 40%+</strong> by integrating Zohobooks, Qoyod, Odoo, and SAP into a unified accounting workflow.</p></div>
-            <div class="imp"><div class="imp-dot"></div><p>Maintained <strong>100% VAT/ZATCA compliance</strong> — zero penalties through accurate filings and proactive audit preparation.</p></div>
-            <div class="imp"><div class="imp-dot"></div><p>Managed end-to-end <strong>AP/AR reconciliation</strong>, significantly reducing outstanding balances through systematic follow-up.</p></div>
-            <div class="imp"><div class="imp-dot"></div><p>Delivered <strong>monthly financial statements and cash flow reports</strong> enabling real-time management decision-making.</p></div>
-            <div class="imp"><div class="imp-dot"></div><p>Maintained complete <strong>fixed asset register</strong> with accurate depreciation schedules — audit-ready at all times.</p></div>
+        <div class="exp-main">
+          <div class="exp-title">Accountant</div>
+          <div class="bullets">
+            <div class="bullet"><div class="b-dot"></div><p><strong>Improved reporting accuracy by 40%+</strong> by integrating Zohobooks, Qoyod, Odoo, SAP, and ERPNext into a unified workflow.</p></div>
+            <div class="bullet"><div class="b-dot"></div><p>Maintained <strong>100% VAT/ZATCA compliance</strong> — zero penalties across all filing periods.</p></div>
+            <div class="bullet"><div class="b-dot"></div><p>Managed end-to-end <strong>AP/AR reconciliation</strong>, reducing outstanding balances through systematic follow-up.</p></div>
+            <div class="bullet"><div class="b-dot"></div><p>Delivered <strong>monthly financial statements and cash flow reports</strong> enabling real-time management decisions.</p></div>
+            <div class="bullet"><div class="b-dot"></div><p>Maintained complete <strong>fixed asset register</strong> with accurate depreciation — audit-ready at all times.</p></div>
           </div>
         </div>
       </div>
 
-      <div class="exp">
-        <div class="exp-l">
+      <div class="exp-row">
+        <div class="exp-aside">
           <div class="exp-period">Mar 2023 — Apr 2025</div>
           <div class="exp-co">Tariff Trading Company</div>
-          <div class="exp-loc">📍 Dammam, Saudi Arabia</div>
-          <span class="exp-tag">Concurrent</span>
+          <div class="exp-place">Dammam, Saudi Arabia</div>
+          <span class="exp-badge">Concurrent</span>
         </div>
-        <div class="exp-r">
-          <div class="exp-role">Account Assistant</div>
-          <div class="impacts">
-            <div class="imp"><div class="imp-dot"></div><p><strong>Spearheaded VAT system transition</strong> — accurate calculations, submissions, and full ZATCA compliance with zero errors.</p></div>
-            <div class="imp"><div class="imp-dot"></div><p>Applied specialist <strong>Zakat compliance expertise</strong>, ensuring alignment with Islamic financial principles.</p></div>
-            <div class="imp"><div class="imp-dot"></div><p>Managed <strong>INFO GATE data localization</strong> for seamless financial audits and clean regulatory records.</p></div>
+        <div class="exp-main">
+          <div class="exp-title">Account Assistant</div>
+          <div class="bullets">
+            <div class="bullet"><div class="b-dot"></div><p><strong>Spearheaded VAT system transition</strong> — zero errors, full ZATCA compliance from day one.</p></div>
+            <div class="bullet"><div class="b-dot"></div><p>Applied <strong>Zakat compliance expertise</strong>, ensuring alignment with Islamic financial principles.</p></div>
+            <div class="bullet"><div class="b-dot"></div><p>Managed <strong>INFO GATE data localization</strong> enabling seamless financial audits and clean regulatory records.</p></div>
           </div>
         </div>
       </div>
 
-      <div class="exp">
-        <div class="exp-l">
+      <div class="exp-row">
+        <div class="exp-aside">
           <div class="exp-period">Feb 2021 — Jan 2023</div>
           <div class="exp-co">Sustainable Global Compliance</div>
-          <div class="exp-loc">📍 Dhaka, Bangladesh</div>
+          <div class="exp-place">Dhaka, Bangladesh</div>
         </div>
-        <div class="exp-r">
-          <div class="exp-role">Assistant Accounts Officer</div>
-          <div class="impacts">
-            <div class="imp"><div class="imp-dot"></div><p>Built foundational expertise in <strong>AP/AR management, bank reconciliation, and VAT compliance</strong> under Bangladesh's regulatory framework.</p></div>
-            <div class="imp"><div class="imp-dot"></div><p>Collaborated with external auditors providing <strong>detailed financial reports</strong> that accelerated audit completion.</p></div>
-            <div class="imp"><div class="imp-dot"></div><p>Built the company's <strong>fixed asset register and depreciation tracking system</strong> from scratch — adopted company-wide.</p></div>
+        <div class="exp-main">
+          <div class="exp-title">Assistant Accounts Officer</div>
+          <div class="bullets">
+            <div class="bullet"><div class="b-dot"></div><p>Built expertise in <strong>AP/AR, bank reconciliation, and VAT compliance</strong> under Bangladesh's regulatory framework.</p></div>
+            <div class="bullet"><div class="b-dot"></div><p>Collaborated with external auditors, delivering <strong>detailed financial schedules</strong> that accelerated audit completion.</p></div>
+            <div class="bullet"><div class="b-dot"></div><p>Built company's <strong>fixed asset register and depreciation system</strong> from scratch — adopted company-wide.</p></div>
           </div>
         </div>
       </div>
 
-      <div class="exp">
-        <div class="exp-l">
-          <div class="exp-period">Feb 2022 — Dec 2022</div>
-          <div class="exp-co">IMED Event Management</div>
-          <div class="exp-loc">📍 Riyadh, Saudi Arabia</div>
-          <span class="exp-tag">Freelance</span>
+      <div class="exp-row">
+        <div class="exp-aside">
+          <div class="exp-period">Feb 2022 — Aug 2023</div>
+          <div class="exp-co">IMED Event Mgmt. / Farazy Hospital</div>
+          <div class="exp-place">Riyadh, KSA · Dhaka, BD</div>
+          <span class="exp-badge">Part-time</span>
         </div>
-        <div class="exp-r">
-          <div class="exp-role">Graphic Designer</div>
-          <div class="impacts">
-            <div class="imp"><div class="imp-dot"></div><p>Designed <strong>event branding materials and visual assets</strong> for a Riyadh-based event management company — building creative skills that now support cross-functional collaboration.</p></div>
-            <div class="imp"><div class="imp-dot"></div><p>Maintained <strong>brand consistency</strong> across multiple event campaigns while delivering consistently under tight deadlines.</p></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="exp">
-        <div class="exp-l">
-          <div class="exp-period">2022 — Aug 2023</div>
-          <div class="exp-co">Farazy Diagnostic &amp; Hospital Ltd.</div>
-          <div class="exp-loc">📍 Dhaka, Bangladesh</div>
-          <span class="exp-tag">Part-Time</span>
-        </div>
-        <div class="exp-r">
-          <div class="exp-role">Social Media Designer</div>
-          <div class="impacts">
-            <div class="imp"><div class="imp-dot"></div><p>Produced <strong>30–35 medical-themed design templates monthly</strong> — demonstrating high output capacity, creative versatility, and reliable deadline management.</p></div>
-            <div class="imp"><div class="imp-dot"></div><p>Collaborated with marketing teams to <strong>maintain brand consistency</strong> across multiple platforms — a skill that enhances cross-functional communication in any organization.</p></div>
+        <div class="exp-main">
+          <div class="exp-title">Graphic & Social Media Designer</div>
+          <div class="bullets">
+            <div class="bullet"><div class="b-dot"></div><p>Produced <strong>30–35 medical-themed design templates monthly</strong> for Farazy Hospital — demonstrating output capacity and deadline management.</p></div>
+            <div class="bullet"><div class="b-dot"></div><p>Designed event branding for IMED Event Management, <strong>maintaining brand consistency</strong> across multiple campaigns.</p></div>
           </div>
         </div>
       </div>
@@ -528,116 +654,191 @@ footer{background:rgba(0,0,0,.35);padding:1.75rem 6%;display:flex;align-items:ce
   </div>
 </section>
 
-<!-- ═══════ SERVICES ═══════ -->
-<section id="services">
+<!-- ═══ SERVICES ═══ -->
+<section id="services" class="section">
   <div class="wrap">
-    <div class="eyebrow" style="color:var(--gold)">What I Offer</div>
-    <h2 class="sh">Services</h2>
-    <p class="sl">Whether you need full-cycle accounting, compliance assurance, or ERP setup — I deliver with precision and zero compromise.</p>
-    <div class="svc-grid reveal">
-      <div class="svc"><div class="svc-n">01</div><h3>VAT &amp; Tax Compliance</h3><p>End-to-end VAT filing, Zakat calculations, ZATCA e-invoicing compliance, and audit preparation — penalty-free, every time.</p></div>
-      <div class="svc"><div class="svc-n">02</div><h3>Financial Reporting</h3><p>Monthly financial statements, cash flow reports, and management dashboards that give leadership real-time visibility to act with confidence.</p></div>
-      <div class="svc"><div class="svc-n">03</div><h3>ERP Setup &amp; Optimization</h3><p>Implementation and optimization of SAP, Zohobooks, Odoo, Qoyod, and ERPNext — turning software into a measurable operational advantage.</p></div>
-      <div class="svc"><div class="svc-n">04</div><h3>Accounts Payable &amp; Receivable</h3><p>Complete AP/AR cycle management — from invoice processing to collections — minimizing outstanding balances and improving cash position.</p></div>
-      <div class="svc"><div class="svc-n">05</div><h3>Cash Flow Management</h3><p>Forecasting, monitoring, and optimizing cash flows to prevent liquidity gaps and sharpen financial planning accuracy.</p></div>
-      <div class="svc"><div class="svc-n">06</div><h3>Audit Support &amp; Preparation</h3><p>Schedules, documentation, and financial reports that make external audits smooth, fast, and completely surprise-free.</p></div>
+    <span class="label">Services</span>
+    <h2 class="h2">What I deliver.</h2>
+    <div class="svc-list reveal">
+      <div class="svc-row">
+        <div class="svc-num">01</div>
+        <div class="svc-name">VAT & Tax Compliance</div>
+        <div class="svc-desc">End-to-end VAT filing, Zakat calculations, ZATCA e-invoicing compliance, and audit preparation — penalty-free, every time.</div>
+      </div>
+      <div class="svc-row">
+        <div class="svc-num">02</div>
+        <div class="svc-name">Financial Reporting</div>
+        <div class="svc-desc">Monthly financial statements, cash flow reports, and management dashboards that give leadership real-time visibility to act with confidence.</div>
+      </div>
+      <div class="svc-row">
+        <div class="svc-num">03</div>
+        <div class="svc-name">ERP Setup & Optimization</div>
+        <div class="svc-desc">Implementation and optimization of SAP, Zohobooks, Odoo, Qoyod, and ERPNext — turning software into a measurable operational advantage.</div>
+      </div>
+      <div class="svc-row">
+        <div class="svc-num">04</div>
+        <div class="svc-name">Accounts Payable & Receivable</div>
+        <div class="svc-desc">Complete AP/AR cycle management — invoice processing to collections — minimizing outstanding balances and improving cash position.</div>
+      </div>
+      <div class="svc-row">
+        <div class="svc-num">05</div>
+        <div class="svc-name">Cash Flow Management</div>
+        <div class="svc-desc">Forecasting, monitoring, and optimizing cash flows to prevent liquidity gaps and sharpen financial planning accuracy.</div>
+      </div>
+      <div class="svc-row">
+        <div class="svc-num">06</div>
+        <div class="svc-name">Audit Support & Preparation</div>
+        <div class="svc-desc">Schedules, documentation, and financial reports that make external audits smooth, fast, and completely surprise-free.</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════ DESIGN ═══════ -->
-<section id="design">
+<!-- ═══ DESIGN ═══ -->
+<section id="design" class="section">
   <div class="wrap">
-    <div class="eyebrow">Creative Work</div>
-    <h2 class="sh">Design Portfolio</h2>
-    <p class="sl">Beyond finance — 4+ years of graphic design experience in logo design, brand identity, and social media creatives.</p>
-    <div class="bbar reveal">
-      <div class="bstats">
-        <div><div class="bs-n">5+</div><div class="bs-l">Projects</div></div>
-        <div><div class="bs-n">129</div><div class="bs-l">Total Views</div></div>
-        <div><div class="bs-n">9</div><div class="bs-l">Appreciations</div></div>
+    <span class="label">Design Portfolio</span>
+    <h2 class="h2">Beyond the numbers.</h2>
+    <p class="body-text" style="margin-bottom:0">4+ years of graphic design alongside finance — logo design, brand identity, and social media creatives.</p>
+    <div class="design-intro reveal">
+      <div style="display:flex;gap:2.5rem;flex-wrap:wrap">
+        <div><div style="font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--ink)">5+</div><div style="font-size:0.75rem;color:var(--faint)">Projects</div></div>
+        <div><div style="font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--ink)">129</div><div style="font-size:0.75rem;color:var(--faint)">Total views</div></div>
+        <div><div style="font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--ink)">9</div><div style="font-size:0.75rem;color:var(--faint)">Appreciations</div></div>
       </div>
-      <a href="https://www.behance.net/immorshed12" target="_blank" class="behance-btn">View on Behance →</a>
+      <a href="https://www.behance.net/immorshed12" target="_blank" class="behance-link">View full Behance profile →</a>
     </div>
     <div class="dgrid reveal">
-      <a href="https://www.behance.net/gallery/157320371/Logo-Design" target="_blank" class="dc feat">
-        <div class="dthumb"><img class="dimg" src="https://mir-s3-cdn-cf.behance.net/projects/404/7e0a5b157320371.Y3JvcCwxOTk5LDE1NjQsMCw3OTI.png" alt="Logo Design" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="dfb" style="display:none">🎨</div><div class="dco"><span>Open Project →</span></div></div>
-        <div class="dinfo"><div class="dtype">Logo Design · Brand Identity · ⭐ Most Popular</div><div class="dname">Logo Design Collection — Multiple Clients</div><div class="dmeta">❤️ 33 appreciations &nbsp;·&nbsp; 👁 2,020 views</div></div>
+      <a href="https://www.behance.net/gallery/157320371/Logo-Design" target="_blank" class="dcard wide">
+        <div class="dthumb"><img class="dimg" src="https://mir-s3-cdn-cf.behance.net/projects/404/7e0a5b157320371.Y3JvcCwxOTk5LDE1NjQsMCw3OTI.png" alt="Logo Design" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="dfb" style="display:none">🎨</div></div>
+        <div class="dinfo"><div class="dcat">Logo Design · Brand Identity · Most Popular</div><div class="dtitle">Logo Design Collection — Multiple Clients</div><div class="dmeta">❤️ 33 appreciations · 👁 2,020 views</div></div>
       </a>
-      <a href="https://www.behance.net/gallery/156226053/Tariff-Trading-Company-logo" target="_blank" class="dc">
-        <div class="dthumb"><img class="dimg" src="https://mir-s3-cdn-cf.behance.net/projects/404/1cb7e2156226053.Y3JvcCwxOTk5LDE1NjQsMCwyMTc.png" alt="Tariff Trading Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="dfb" style="display:none">🏢</div><div class="dco"><span>Open →</span></div></div>
-        <div class="dinfo"><div class="dtype">Corporate Logo · Real Client</div><div class="dname">Tariff Trading Company — Official Logo</div><div class="dmeta">❤️ 2 &nbsp;·&nbsp; 👁 34 views</div></div>
+      <a href="https://www.behance.net/gallery/156226053/Tariff-Trading-Company-logo" target="_blank" class="dcard">
+        <div class="dthumb"><img class="dimg" src="https://mir-s3-cdn-cf.behance.net/projects/404/1cb7e2156226053.Y3JvcCwxOTk5LDE1NjQsMCwyMTc.png" alt="Tariff Trading" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="dfb" style="display:none">🏢</div></div>
+        <div class="dinfo"><div class="dcat">Corporate Logo</div><div class="dtitle">Tariff Trading Company</div><div class="dmeta">❤️ 2 · 👁 34 views</div></div>
       </a>
-      <a href="https://www.behance.net/gallery/157119531/Winter-Season-Vegetables-Creative-post-design" target="_blank" class="dc">
-        <div class="dthumb"><img class="dimg" src="https://mir-s3-cdn-cf.behance.net/projects/404/001934157119531.Y3JvcCwxOTIwLDE1MDEsMCwyNDc.jpg" alt="Winter Vegetables Post" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="dfb" style="display:none">🥦</div><div class="dco"><span>Open →</span></div></div>
-        <div class="dinfo"><div class="dtype">Social Media · Creative Post</div><div class="dname">Winter Vegetables — Creative Post Design</div><div class="dmeta">👁 1,515 views</div></div>
+      <a href="https://www.behance.net/gallery/157119531/Winter-Season-Vegetables-Creative-post-design" target="_blank" class="dcard">
+        <div class="dthumb"><img class="dimg" src="https://mir-s3-cdn-cf.behance.net/projects/404/001934157119531.Y3JvcCwxOTIwLDE1MDEsMCwyNDc.jpg" alt="Winter Vegetables" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="dfb" style="display:none">🥦</div></div>
+        <div class="dinfo"><div class="dcat">Social Media Post</div><div class="dtitle">Winter Vegetables — Creative Post</div><div class="dmeta">👁 1,515 views</div></div>
       </a>
-      <a href="https://www.behance.net/gallery/123216173/ADAMO-HOUSE-RANCH" target="_blank" class="dc">
-        <div class="dthumb"><img class="dimg" src="https://mir-s3-cdn-cf.behance.net/projects/404/7491b1123216173.Y3JvcCw4ODc5LDY5NDUsNzAzLDA.jpg" alt="ADAMO HOUSE RANCH" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="dfb" style="display:none">🏡</div><div class="dco"><span>Open →</span></div></div>
-        <div class="dinfo"><div class="dtype">Brand Design · Real Estate</div><div class="dname">ADAMO HOUSE RANCH — Brand Identity</div><div class="dmeta">❤️ 2 &nbsp;·&nbsp; 👁 46 views</div></div>
+      <a href="https://www.behance.net/gallery/123216173/ADAMO-HOUSE-RANCH" target="_blank" class="dcard">
+        <div class="dthumb"><img class="dimg" src="https://mir-s3-cdn-cf.behance.net/projects/404/7491b1123216173.Y3JvcCw4ODc5LDY5NDUsNzAzLDA.jpg" alt="ADAMO HOUSE" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="dfb" style="display:none">🏡</div></div>
+        <div class="dinfo"><div class="dcat">Brand Identity</div><div class="dtitle">ADAMO HOUSE RANCH</div><div class="dmeta">❤️ 2 · 👁 46 views</div></div>
       </a>
-      <a href="https://www.behance.net/gallery/122918331/News-Paper-Logo" target="_blank" class="dc">
-        <div class="dthumb"><img class="dimg" src="https://mir-s3-cdn-cf.behance.net/projects/404/ba983c122918331.Y3JvcCw1NTU1LDQzNDUsMCw2MDU.jpg" alt="News Paper Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="dfb" style="display:none">📰</div><div class="dco"><span>Open →</span></div></div>
-        <div class="dinfo"><div class="dtype">Logo Design · Media</div><div class="dname">Newspaper — Logo Design</div><div class="dmeta">❤️ 2 &nbsp;·&nbsp; 👁 14 views</div></div>
+      <a href="https://www.behance.net/gallery/122918331/News-Paper-Logo" target="_blank" class="dcard">
+        <div class="dthumb"><img class="dimg" src="https://mir-s3-cdn-cf.behance.net/projects/404/ba983c122918331.Y3JvcCw1NTU1LDQzNDUsMCw2MDU.jpg" alt="Newspaper Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="dfb" style="display:none">📰</div></div>
+        <div class="dinfo"><div class="dcat">Logo Design</div><div class="dtitle">Newspaper Logo</div><div class="dmeta">❤️ 2 · 👁 14 views</div></div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ═══════ CERTIFICATIONS ═══════ -->
-<section id="certifications">
+<!-- ═══ CERTIFICATIONS ═══ -->
+<section id="certifications" class="section">
   <div class="wrap">
-    <div class="eyebrow">Credentials &amp; Roadmap</div>
-    <h2 class="sh">Certifications</h2>
-    <p class="sl">Current credentials and the learning path I'm actively pursuing to grow as a financial professional.</p>
-    <div class="cert-layout reveal">
+    <span class="label">Credentials</span>
+    <h2 class="h2">Earned & in progress.</h2>
+    <div class="cert-cols reveal">
       <div>
-        <div class="cert-glbl">Earned &amp; Active</div>
-        <div class="cert-list">
-          <div class="cert-row"><div class="cdot e"></div><div class="cinfo"><div class="cn">BSS in Economics</div><div class="ci">Govt. Chittagong College · National University, 2022</div></div><span class="cbadge e">Earned</span></div>
-          <div class="cert-row"><div class="cdot e"></div><div class="cinfo"><div class="cn">4+ Years GCC Accounting Experience</div><div class="ci">Manufacturing &amp; Trading · Saudi Arabia, 2021–Present</div></div><span class="cbadge e">Active</span></div>
-          <div class="cert-row"><div class="cdot e"></div><div class="cinfo"><div class="cn">ZATCA VAT Practical Experience</div><div class="ci">VAT filings, e-invoicing &amp; audit support — 2 companies</div></div><span class="cbadge e">Active</span></div>
-          <div class="cert-row"><div class="cdot e"></div><div class="cinfo"><div class="cn">Dual Driving License</div><div class="ci">Valid in Saudi Arabia &amp; Bangladesh</div></div><span class="cbadge e">Active</span></div>
-        </div>
+        <div class="cert-group-title">Earned & Active</div>
+        <div class="cert-item"><div class="cdot e"></div><div class="ci-body"><div class="ci-name">BSS in Economics</div><div class="ci-sub">Govt. Chittagong College · National University, 2022</div></div><span class="cbadge e">Earned</span></div>
+        <div class="cert-item"><div class="cdot e"></div><div class="ci-body"><div class="ci-name">4+ Years GCC Accounting Experience</div><div class="ci-sub">Manufacturing & Trading · Saudi Arabia, 2021–Present</div></div><span class="cbadge e">Active</span></div>
+        <div class="cert-item"><div class="cdot e"></div><div class="ci-body"><div class="ci-name">ZATCA VAT Practical Experience</div><div class="ci-sub">VAT filings, e-invoicing & audit support — 2 companies</div></div><span class="cbadge e">Active</span></div>
+        <div class="cert-item"><div class="cdot e"></div><div class="ci-body"><div class="ci-name">Dual Driving License</div><div class="ci-sub">Valid in Saudi Arabia & Bangladesh</div></div><span class="cbadge e">Active</span></div>
       </div>
       <div>
-        <div class="cert-glbl">In Progress &amp; Planned</div>
-        <div class="cert-list">
-          <div class="cert-row"><div class="cdot p"></div><div class="cinfo"><div class="cn">CMA — Certified Management Accountant</div><div class="ci">IMA (Institute of Management Accountants)</div></div><span class="cbadge ip">Pursuing</span></div>
-          <div class="cert-row"><div class="cdot p"></div><div class="cinfo"><div class="cn">Power BI for Finance Professionals</div><div class="ci">Microsoft / Coursera</div></div><span class="cbadge p">Planned</span></div>
-          <div class="cert-row"><div class="cdot p"></div><div class="cinfo"><div class="cn">IFRS for SMEs</div><div class="ci">ACCA / ICAEW Resources</div></div><span class="cbadge p">Planned</span></div>
-          <div class="cert-row"><div class="cdot p"></div><div class="cinfo"><div class="cn">Financial Modeling &amp; Valuation</div><div class="ci">CFI — Corporate Finance Institute</div></div><span class="cbadge p">Planned</span></div>
-          <div class="cert-row"><div class="cdot p"></div><div class="cinfo"><div class="cn">ZATCA Tax Practitioner Certificate</div><div class="ci">ZATCA Official Training Program</div></div><span class="cbadge p">Planned</span></div>
-        </div>
+        <div class="cert-group-title">In Progress & Planned</div>
+        <div class="cert-item"><div class="cdot p"></div><div class="ci-body"><div class="ci-name">CMA — Certified Management Accountant</div><div class="ci-sub">IMA — Institute of Management Accountants</div></div><span class="cbadge ip">Pursuing</span></div>
+        <div class="cert-item"><div class="cdot p"></div><div class="ci-body"><div class="ci-name">Power BI for Finance Professionals</div><div class="ci-sub">Microsoft / Coursera</div></div><span class="cbadge p">Planned</span></div>
+        <div class="cert-item"><div class="cdot p"></div><div class="ci-body"><div class="ci-name">IFRS for SMEs</div><div class="ci-sub">ACCA / ICAEW Resources</div></div><span class="cbadge p">Planned</span></div>
+        <div class="cert-item"><div class="cdot p"></div><div class="ci-body"><div class="ci-name">Financial Modeling & Valuation</div><div class="ci-sub">CFI — Corporate Finance Institute</div></div><span class="cbadge p">Planned</span></div>
+        <div class="cert-item"><div class="cdot p"></div><div class="ci-body"><div class="ci-name">ZATCA Tax Practitioner Certificate</div><div class="ci-sub">ZATCA Official Training Program</div></div><span class="cbadge p">Planned</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════ CONTACT ═══════ -->
-<section id="contact">
+<!-- ═══ CONTACT ═══ -->
+<section id="contact" class="section">
   <div class="wrap">
-    <div class="eyebrow" style="color:var(--gold)">Get In Touch</div>
-    <h2 class="sh">Let's Work Together</h2>
-    <p class="sl">Whether you're hiring, exploring freelance accounting, or want to discuss a collaboration — reach out directly. Both numbers are on WhatsApp.</p>
-    <div class="contact-grid reveal">
-      <div class="clinks">
-        <a href="mailto:immorshed068@gmail.com" class="cl"><div class="cl-ico">✉️</div><div><div class="cl-t">Email</div><div class="cl-v">immorshed068@gmail.com</div></div></a>
-        <a href="https://wa.me/966573255396" target="_blank" class="cl"><div class="cl-ico">💬</div><div><div class="cl-t">WhatsApp · KSA</div><div class="cl-v">+966 573 255 396</div></div></a>
-        <a href="https://wa.me/8801832984186" target="_blank" class="cl"><div class="cl-ico">💬</div><div><div class="cl-t">WhatsApp · Bangladesh</div><div class="cl-v">+880 183 298 4186</div></div></a>
-        <a href="https://linkedin.com/in/immorshed12" target="_blank" class="cl"><div class="cl-ico">💼</div><div><div class="cl-t">LinkedIn</div><div class="cl-v">linkedin.com/in/immorshed12</div></div></a>
-        <a href="https://www.behance.net/immorshed12" target="_blank" class="cl"><div class="cl-ico">🎨</div><div><div class="cl-t">Behance Portfolio</div><div class="cl-v">behance.net/immorshed12</div></div></a>
-        <a href="#" class="cl"><div class="cl-ico">📄</div><div><div class="cl-t">Resume / CV</div><div class="cl-v">Download ATS-Friendly Resume →</div></div></a>
+    <span class="label">Contact</span>
+    <h2 class="h2">Let's work together.</h2>
+    <p class="body-text">Whether you're hiring, exploring freelance accounting, or discussing a collaboration — reach out directly. Both numbers connect to WhatsApp.</p>
+    <hr class="divider" style="margin:2rem 0">
+    <div class="contact-cols reveal">
+      <div class="contact-links">
+        <a href="mailto:immorshed068@gmail.com" class="clink"><span class="cl-k">Email</span><span class="cl-v">immorshed068@gmail.com</span></a>
+        <a href="https://wa.me/966573255396" target="_blank" class="clink"><span class="cl-k">KSA</span><span class="cl-v">+966 573 255 396</span></a>
+        <a href="https://wa.me/8801832984186" target="_blank" class="clink"><span class="cl-k">Bangladesh</span><span class="cl-v">+880 183 298 4186</span></a>
+        <a href="https://linkedin.com/in/immorshed12" target="_blank" class="clink"><span class="cl-k">LinkedIn</span><span class="cl-v">linkedin.com/in/immorshed12</span></a>
+        <a href="https://www.behance.net/immorshed12" target="_blank" class="clink"><span class="cl-k">Behance</span><span class="cl-v">behance.net/immorshed12</span></a>
+        <a href="#" class="clink"><span class="cl-k">Resume</span><span class="cl-v">Download CV →</span></a>
       </div>
       <div class="cform">
-        <div class="fpair">
-          <div class="fg"><label>Your Name</label><input type="text" placeholder="Ahmed Al-Rashid"></div>
-          <div class="fg"><label>Company</label><input type="text" placeholder="Your Company"></div>
+        <!-- Success / Error messages -->
+        <div data-fs-success style="display:none; padding:1rem; background:#F0FDF4;
+             border:1px solid #BBF7D0; border-radius:4px; font-size:0.85rem;
+             color:#166534; margin-bottom:0.5rem;">
+          ✓ Message sent! I'll get back to you soon.
         </div>
-        <div class="fg"><label>Email</label><input type="email" placeholder="you@company.com"></div>
-        <div class="fg"><label>Subject</label><input type="text" placeholder="Job Opportunity / Freelance / Partnership"></div>
-        <div class="fg"><label>Message</label><textarea rows="5" placeholder="Tell me about the opportunity or what you need help with..."></textarea></div>
-        <button class="sbtn" onclick="send(this)"><span>Send Message</span><span>→</span></button>
+        <div data-fs-error style="display:none; padding:1rem; background:#FEF2F2;
+             border:1px solid #FECACA; border-radius:4px; font-size:0.85rem;
+             color:#991B1B; margin-bottom:0.5rem;">
+          ✗ Something went wrong. Please email me directly at
+          <a href="mailto:immorshed068@gmail.com" style="color:#B45309">
+          immorshed068@gmail.com</a>
+        </div>
+
+        <form id="contactForm">
+          <!-- Hidden: subject line in Gmail -->
+          <input type="hidden" name="_subject"
+                 value="New message from your portfolio website 🎯">
+
+          <div class="form-row">
+            <div class="fg">
+              <label for="f-name">Name</label>
+              <input id="f-name" type="text" name="name"
+                     placeholder="Your name" data-fs-field required>
+              <span data-fs-error="name" style="font-size:0.72rem;color:#DC2626;margin-top:2px;"></span>
+            </div>
+            <div class="fg">
+              <label for="f-company">Company</label>
+              <input id="f-company" type="text" name="company"
+                     placeholder="Your company">
+            </div>
+          </div>
+
+          <div class="fg">
+            <label for="f-email">Email</label>
+            <input id="f-email" type="email" name="email"
+                   placeholder="your@email.com" data-fs-field required>
+            <span data-fs-error="email" style="font-size:0.72rem;color:#DC2626;margin-top:2px;"></span>
+          </div>
+
+          <div class="fg">
+            <label for="f-msg">Message</label>
+            <textarea id="f-msg" name="message" rows="5"
+                      placeholder="Tell me about the opportunity..."
+                      data-fs-field required></textarea>
+            <span data-fs-error="message" style="font-size:0.72rem;color:#DC2626;margin-top:2px;"></span>
+          </div>
+
+          <button type="submit" class="send" data-fs-submit-btn>
+            Send Message
+          </button>
+        </form>
+
+        <!-- Formspree Ajax SDK -->
+        <script>
+          window.formspree = window.formspree || function(){
+            (formspree.q = formspree.q || []).push(arguments);
+          };
+          formspree('initForm', {
+            formElement: '#contactForm',
+            formId: 'mnjlbzpz'
+          });
+        </script>
+        <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
       </div>
     </div>
   </div>
@@ -645,7 +846,7 @@ footer{background:rgba(0,0,0,.35);padding:1.75rem 6%;display:flex;align-items:ce
 
 <!-- FOOTER -->
 <footer>
-  <div class="fc">© 2025 Muhammad Morshedul Islam · Financial Accountant · Riyadh, Saudi Arabia</div>
+  <span class="fc">© 2025 Muhammad Morshedul Islam · Riyadh, Saudi Arabia</span>
   <div class="fl">
     <a href="mailto:immorshed068@gmail.com">Email</a>
     <a href="https://linkedin.com/in/immorshed12" target="_blank">LinkedIn</a>
@@ -655,28 +856,17 @@ footer{background:rgba(0,0,0,.35);padding:1.75rem 6%;display:flex;align-items:ce
 </footer>
 
 <script>
-// Nav scroll
-window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>40));
+function openD(){ document.getElementById('drawer').classList.add('on'); document.body.style.overflow='hidden'; }
+function closeD(){ document.getElementById('drawer').classList.remove('on'); document.body.style.overflow=''; }
 
-// Drawer
-function openD(){document.getElementById('drawer').classList.add('open');document.body.style.overflow='hidden'}
-function closeD(){document.getElementById('drawer').classList.remove('open');document.body.style.overflow=''}
+const io = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('on'); io.unobserve(x.target); } }), { threshold: 0.07, rootMargin: '0px 0px -24px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// Reveal on scroll
-const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');io.unobserve(x.target)}}),{threshold:.08,rootMargin:'0px 0px -28px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-// Contact form
-function send(btn){
-  const o=btn.innerHTML;
-  btn.innerHTML='<span>Sending...</span><span>⏳</span>';
-  btn.disabled=true;
-  setTimeout(()=>{
-    btn.innerHTML='<span>Sent Successfully!</span><span>✓</span>';
-    btn.style.background='#2a7a4f';
-    setTimeout(()=>{btn.innerHTML=o;btn.style.background='';btn.disabled=false},3000);
-  },1200);
-}
+// Nav scroll shadow
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.boxShadow =
+    window.scrollY > 40 ? '0 1px 20px rgba(0,0,0,0.06)' : 'none';
+});
 </script>
 </body>
 </html>
